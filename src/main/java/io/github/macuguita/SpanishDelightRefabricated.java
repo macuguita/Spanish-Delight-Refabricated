@@ -3,6 +3,7 @@ package io.github.macuguita;
 import io.github.macuguita.block.ModBlocks;
 import io.github.macuguita.item.ModItemGroups;
 import io.github.macuguita.item.ModItems;
+import io.github.macuguita.utils.ModCustomTrades;
 import io.github.macuguita.utils.ModFeatures;
 import net.fabricmc.api.ModInitializer;
 
@@ -20,5 +21,6 @@ public class SpanishDelightRefabricated implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModFeatures.init();
+		ModCustomTrades.registerCustomTrades();
 	}
 }
