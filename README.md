@@ -1,22 +1,29 @@
 # Spanish Delight
 
-<!--- link de arriba: link al mod --->
-<!--- link de abajo: cambiar el numero por el id del proyecto en cuestion --->
-<!---<a href="https://www.curseforge.com/minecraft/mc-mods/farmers-delight">
-  <img src="http://cf.way2muchnoise.eu/full_892827_downloads.svg" alt="Curseforge Downloads">
-</a>--->
+<center>
+  <img src="https://github.com/DevJulen/SpanishDelight-1.20.1-Forge/blob/master/src/main/resources/spanishdelightbanner.png?raw=true">
+</center>
 
+**Spanish Delight** is a mod that expands upon the cooking system from **Farmer's Delight** introducing spanish cuisine's traditional plates such as Spanish Tortilla, Gazpacho and more.
 
-<p dir="auto"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://github.com/DevJulen/SpanishDelight-1.20.1-Forge/blob/master/src/main/resources/spanishdelightbanner.png?raw=true" alt="Spanish Delight" width="675" height="185" /></p>
-<p style="text-align: left;"><span style="font-size: 14px;"><strong>Spanish Delight</strong> is a mod that expands upon the cooking system from <strong>Farmer's Delight</strong> introducing spanish cuisine's traditional plates such as Spanish Tortilla, Gazpacho and more.</span></p>
-<p><span style="font-size: 14px;">Find new ingredients spawned in the world and cook delicious new meals! </span><span style="font-size: 14px;"><br /></span></p>
+Find new ingredients spawned in the world and cook delicious new meals!
 
-<p dir="auto"><span style="font-size: 14px;">⚙️ <strong>Dependencies:</strong></span></p>
-<p dir="auto"><span style="font-size: 14px;">You will need <strong>Farmers Delight</strong> and Forge to run this mod, and optionally but highly recommended <strong>JEI</strong> !</span></p>
-<p dir="auto"><span style="font-size: 14px;">🧾 <strong>More:</strong></span></p>
-<p dir="auto"><span style="font-size: 14px;">The original developer has some plans to add more content to this mod, I'll port it to Fabric when that happens</span></p>
-<p dir="auto"><span style="font-size: 14px;">📝 <strong>Credits:</strong></span></p>
-<p dir="auto"><span style="font-size: 14px;">Developed by macuguita <a href="https://x.com/macuguita" rel="nofollow">https://x.com/macuguita</a></span></p>
-<p dir="auto"><span style="font-size: 14px;">Original mod by by DevJulen <a href="https://x.com/DevJulen" rel="nofollow">https://x.com/DevJulen</a></span></p>
-<p dir="auto"><span style="font-size: 14px;">Big thanks to vectorwing for creating Farmer's Delight <a href="https://www.curseforge.com/minecraft/mc-mods/farmers-delight" rel="nofollow">https://www.curseforge.com/minecraft/mc-mods/farmers-delight</a></span></p>
-<p dir="auto"><span style="font-size: 14px;">Big thanks to ArBeet for creating the assets! <a href="https://x.com/ArBeeeet">https://x.com/ArBeeeet</a></span></p>
+⚙️ Dependencies:
+
+You will need **Farmers Delight** and Fabric to run this mod, and optionally but highly recommended EMI !
+
+🧾 More:
+
+The original developer has some plans to add more content to this mod, I'll port it to Fabric when that happens
+
+📝 Credits:
+
+Developed by macuguita [https://x.com/macuguita](https://x.com/macuguita)
+
+Original mod by by DevJulen [https://x.com/DevJulen](https://x.com/DevJulen)
+
+Big thanks to vectorwing for creating Farmer's Delight [https://modrinth.com/mod/farmers-delight](https://modrinth.com/mod/farmers-delight)
+
+Big thanks to Pug and MehVahdJukaar for porting Farmer's Delight to Fabric [https://modrinth.com/mod/farmers-delight-refabricated](https://modrinth.com/mod/farmers-delight-refabricated)
+
+Big thanks to ArBeet for creating the assets! [https://x.com/ArBeeeet](https://x.com/ArBeeeet)
