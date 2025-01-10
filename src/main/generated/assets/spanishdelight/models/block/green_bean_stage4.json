@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "spanishdelight:block/green_bean_stage4"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "spanishdelight:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/squid"
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "killer",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "tag": "farmersdelight:tools/knives"
+          }
+        }
+      }
+    }
+  ],
+  "item": "spanishdelight:squid_ring"
+}
