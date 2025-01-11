@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:bread"
-            ]
+            "items": "minecraft:bread"
           }
         ]
       },
@@ -23,9 +21,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "farmersdelight:tomato"
-            ]
+            "items": "farmersdelight:tomato"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_tomato",
-      "has_bread",
-      "has_the_recipe"
+      "has_bread"
     ]
   ],
   "rewards": {
     "recipes": [
       "spanishdelight:pantumaca"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

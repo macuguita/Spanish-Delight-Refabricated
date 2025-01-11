@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "spanishdelight:squid_ring"
-            ]
+            "items": "spanishdelight:squid_ring"
           }
         ]
       },
@@ -15,21 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "spanishdelight:fried_squid_ring_from_campfire"
+        "recipe": "spanishdelight:fried_squid_ring"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_squid_ring",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_squid_ring"
     ]
   ],
   "rewards": {
     "recipes": [
-      "spanishdelight:fried_squid_ring_from_campfire"
+      "spanishdelight:fried_squid_ring"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

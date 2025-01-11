@@ -8,8 +8,6 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
 
-import javax.swing.text.html.HTML;
-
 public class ModTags {
     public static class Blocks {
 

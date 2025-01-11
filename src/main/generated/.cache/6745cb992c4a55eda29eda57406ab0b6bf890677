@@ -1,5 +1,5 @@
-// 1.20.1	2025-01-10T04:16:22.873061078	Spanish Delight Refabricated/Block Loot Tables
-71d4f7f3c9753415274465c18bd0d4f752282677 data/spanishdelight/loot_tables/blocks/green_bean.json
-c60e68ad42a93ef36a1d252cd1af9358a49a98ab data/spanishdelight/loot_tables/blocks/wild_green_pepper.json
-9f927abe591d79565d2ed65ac42c6bf5904fd2e4 data/spanishdelight/loot_tables/blocks/wild_red_pepper.json
-0c5f291e1b4c1dd157847174aeb483814bd85c59 data/spanishdelight/loot_tables/blocks/wild_garlic.json
+// 1.21.1	2025-01-11T14:07:21.073728915	Spanish Delight Refabricated/Block Loot Tables
+082b2a1b2bf1e37b49e165b0a8d508f09a00c9d4 data/spanishdelight/loot_table/blocks/wild_garlic.json
+f5cae826f60570fe33aef56aef75466f3676e3f3 data/spanishdelight/loot_table/blocks/wild_red_pepper.json
+986e7ae9bb9dd1a13680fd4e553f144a4c53236d data/spanishdelight/loot_table/blocks/wild_green_pepper.json
+71d4f7f3c9753415274465c18bd0d4f752282677 data/spanishdelight/loot_table/blocks/green_bean.json

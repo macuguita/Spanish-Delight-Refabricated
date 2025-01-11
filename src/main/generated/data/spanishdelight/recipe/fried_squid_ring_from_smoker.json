@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "spanishdelight:squid_ring"
   },
-  "result": "spanishdelight:fried_squid_ring"
+  "result": {
+    "id": "spanishdelight:fried_squid_ring"
+  }
 }

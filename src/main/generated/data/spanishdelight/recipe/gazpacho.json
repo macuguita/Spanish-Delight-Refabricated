@@ -6,10 +6,20 @@
       "item": "farmersdelight:tomato"
     },
     {
+      "item": "spanishdelight:garlic"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
       "item": "minecraft:bread"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "result": {
-    "item": "spanishdelight:pantumaca"
+    "count": 1,
+    "id": "spanishdelight:gazpacho"
   }
 }

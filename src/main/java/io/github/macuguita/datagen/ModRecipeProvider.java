@@ -5,27 +5,25 @@ import io.github.macuguita.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.AbstractCookingRecipe;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
-import java.util.function.Consumer;
+import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
 
-    public ModRecipeProvider(FabricDataOutput output) {
-        super(output);
+
+    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(output, registriesFuture);
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> consumer) {
+    public void generate(RecipeExporter consumer) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.GAZPACHO)
                 .input(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get())
                 .input(ModItems.GARLIC)
@@ -48,9 +46,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(consumer);
         CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(ModItems.SQUID_RING), RecipeCategory.FOOD, ModItems.FRIED_SQUID_RING, 0.35F, 200)
                 .criterion(hasItem(ModItems.SQUID_RING), conditionsFromItem(ModItems.SQUID_RING))
-                .offerTo(consumer, new Identifier(SpanishDelightRefabricated.MOD_ID, ModItems.FRIED_SQUID_RING + "_from_campfire"));
+                .offerTo(consumer, Identifier.of(ModItems.FRIED_SQUID_RING+"_from_campfire"));
         CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(ModItems.SQUID_RING), RecipeCategory.FOOD, ModItems.FRIED_SQUID_RING, 0.35F, 200)
                 .criterion(hasItem(ModItems.SQUID_RING), conditionsFromItem(ModItems.SQUID_RING))
-                .offerTo(consumer, new Identifier(SpanishDelightRefabricated.MOD_ID, ModItems.FRIED_SQUID_RING + "_from_smoker"));
+                .offerTo(consumer, Identifier.of(ModItems.FRIED_SQUID_RING+"_from_smoker"));
     }
 }

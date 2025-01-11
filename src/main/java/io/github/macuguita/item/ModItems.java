@@ -2,8 +2,8 @@ package io.github.macuguita.item;
 
 import io.github.macuguita.SpanishDelightRefabricated;
 import io.github.macuguita.block.ModBlocks;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;

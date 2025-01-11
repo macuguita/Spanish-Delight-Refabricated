@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 public class ModItemGroups {
 
     public static ItemGroup SDELIGHT_TAB = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(SpanishDelightRefabricated.MOD_ID, "sdelight_tab"),
+            Identifier.of(SpanishDelightRefabricated.MOD_ID, "sdelight_tab"),
             FabricItemGroup.builder().displayName(Text.translatable("creativetab.sdelight_tab"))
                     .icon(() -> new ItemStack(ModItems.SPANISH_TORTILLA)).entries((displayContext, entries) -> {
                         entries.add(ModItems.PAPRIKA);

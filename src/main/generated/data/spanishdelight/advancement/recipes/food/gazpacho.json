@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "spanishdelight:garlic"
-            ]
+            "items": "spanishdelight:garlic"
           }
         ]
       },
@@ -23,9 +21,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "farmersdelight:tomato"
-            ]
+            "items": "farmersdelight:tomato"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_tomato",
-      "has_garlic",
-      "has_the_recipe"
+      "has_garlic"
     ]
   ],
   "rewards": {
     "recipes": [
       "spanishdelight:gazpacho"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

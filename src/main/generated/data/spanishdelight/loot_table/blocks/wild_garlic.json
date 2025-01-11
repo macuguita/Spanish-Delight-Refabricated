@@ -13,18 +13,20 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "enchantments": [
-                      {
-                        "enchantment": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
                         }
-                      }
-                    ]
+                      ]
+                    }
                   }
                 }
               ],
-              "name": "spanishdelight:wild_red_pepper"
+              "name": "spanishdelight:wild_garlic"
             },
             {
               "type": "minecraft:item",
@@ -47,7 +49,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "spanishdelight:red_pepper"
+              "name": "spanishdelight:garlic"
             }
           ]
         }

@@ -15,21 +15,17 @@ repositories {
 		name = "Greenhouse Maven"
 		url = 'https://repo.greenhouse.house/releases/'
 	}
-	maven { url "https://mvn.devos.one/releases/" } // Porting Lib
 	maven {
-		url "https://maven.jamieswhiteshirt.com/libs-release" // Reach Entity Attributes (Required by Porting Lib)
-		content {
-			includeGroup "com.jamieswhiteshirt"
-		}
+		name = "Greenhouse Maven"
+		url = 'https://repo.greenhouse.house/snapshots/' // Porting Lib Hotfixes
 	}
+	maven { url "https://mvn.devos.one/snapshots/" } // Porting Lib Betas
 	maven {
 		url "https://jitpack.io/" // Fabric ASM
 		content {
 			excludeGroup "io.github.fabricators_of_create"
 		}
 	}
-	maven { url "https://maven.ryanliptak.com/" }
-	mavenCentral()
 }
 
 fabricApi {
@@ -39,10 +35,12 @@ fabricApi {
 }
 
 dependencies {
+	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
+	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	modImplementation("vectorwing:FarmersDelight:${fdrf_version}") {
