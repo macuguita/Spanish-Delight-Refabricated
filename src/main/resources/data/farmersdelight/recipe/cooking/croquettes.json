@@ -21,6 +21,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "spanishdelight:croquettes"
+    "count": 1,
+    "id": "spanishdelight:croquettes"
   }
 }

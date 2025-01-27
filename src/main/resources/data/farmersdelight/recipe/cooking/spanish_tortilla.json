@@ -24,6 +24,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "spanishdelight:spanish_tortilla"
+    "count": 1,
+    "id": "spanishdelight:spanish_tortilla"
   }
 }

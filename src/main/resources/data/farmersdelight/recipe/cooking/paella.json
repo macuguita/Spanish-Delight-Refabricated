@@ -1,7 +1,8 @@
 {
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "minecraft:bowl"
+    "count": 1,
+    "id": "minecraft:bowl"
   },
   "cookingtime": 400,
   "experience": 2.0,
@@ -27,6 +28,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "spanishdelight:paella"
+    "id": "spanishdelight:paella"
   }
 }
