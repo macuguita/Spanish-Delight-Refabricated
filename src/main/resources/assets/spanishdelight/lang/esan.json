@@ -17,9 +17,15 @@
   "item.spanishdelight.pantumaca": "Pantumaca",
   "item.spanishdelight.fried_squid_ring": "Aniya de Calamâh Frita",
 
+  "item.spanishdelight.wild_garlic": "Aho Çarbahe",
+  "item.spanishdelight.wild_red_pepper": "Pimiento Roho Çarbahe",
+  "item.spanishdelight.wild_green_pepper": "Pimiento Berde Çarbahe",
+
   "block.spanishdelight.wild_garlic": "Aho Çarbahe",
   "block.spanishdelight.wild_red_pepper": "Pimiento Roho Çarbahe",
   "block.spanishdelight.wild_green_pepper": "Pimiento Berde Çarbahe",
+
+  "block.spanishdelight.green_bean_crop": "Hudía Berde",
 
   "tooltip.spanishdelight.squid_ring": "S'obté matant un calamar amb qualsevol ganivet",
   "tooltip.spanishdelight.green_bean": "Intercanvia amb el vilatà granger per aconseguir-la!",

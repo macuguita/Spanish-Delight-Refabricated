@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "farmersdelight:onion"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 3,
+        "id": "spanishdelight:sliced_onion"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

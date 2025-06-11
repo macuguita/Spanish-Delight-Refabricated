@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 0.35,
-  "ingredient": {
-    "item": "spanishdelight:squid_ring"
-  },
+  "ingredient": "spanishdelight:squid_ring",
   "result": {
     "id": "spanishdelight:fried_squid_ring"
   }

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "farmersdelight:tomato"
-    },
-    {
-      "item": "minecraft:bread"
-    }
+    "farmersdelight:tomato",
+    "minecraft:bread"
   ],
   "result": {
     "count": 1,

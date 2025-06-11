@@ -29,9 +29,26 @@ repositories {
 	maven { url "https://maven.shedaniel.me/" }
 }
 
-fabricApi {
-	configureDataGeneration {
-		client = true
+loom {
+	runs {
+		register("datagen") {
+			client()
+			name = "Data Generation"
+
+			vmArg("-Dfabric-api.datagen")
+			vmArg("-Dfabric-api.datagen.modid=spanishdelight")
+			vmArg("-Dfabric-api.datagen.output-dir=${project.file("src/main/generated")}")
+			runDir("build/datagen")
+
+			ideConfigGenerated(true)
+		}
+	}
+}
+
+sourceSets {
+	main {
+		resources.srcDir("src/main/generated")
+		resources.exclude(".cache")
 	}
 }
 

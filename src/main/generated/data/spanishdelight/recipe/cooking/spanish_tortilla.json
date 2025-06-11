@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "experience": 2.0,
+  "ingredients": [
+    "spanishdelight:sliced_potato",
+    "spanishdelight:sliced_onion",
+    "#c:eggs",
+    "#c:eggs",
+    "#c:eggs",
+    "#c:eggs"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spanishdelight:spanish_tortilla"
+  }
+}

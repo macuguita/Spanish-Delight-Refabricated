@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    "spanishdelight:sliced_potato",
+    "spanishdelight:sliced_potato",
+    "spanishdelight:paprika"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spanishdelight:brava_potatoes"
+  }
+}

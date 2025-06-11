@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "minecraft:potato"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 3,
+        "id": "spanishdelight:sliced_potato"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

@@ -1,6 +1,8 @@
 package io.github.macuguita.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import io.github.macuguita.item.ModItems;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
@@ -10,10 +12,17 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 
 public class GreenBeanCropBlock extends CropBlock {
-    public static final int MAX_AGE = 5;
-    public static final IntProperty AGE = Properties.AGE_5;
 
-    public GreenBeanCropBlock(Settings settings) {
+    public static final int MAX_AGE = 5;
+    public static final IntProperty GREEN_BEAN_AGE = Properties.AGE_5;
+    public static final MapCodec<GreenBeanCropBlock> CODEC = createCodec(GreenBeanCropBlock::new);
+
+    @Override
+    public MapCodec<GreenBeanCropBlock> getCodec() {
+        return CODEC;
+    }
+
+    public GreenBeanCropBlock(AbstractBlock.Settings settings) {
         super(settings);
     }
 
@@ -23,8 +32,8 @@ public class GreenBeanCropBlock extends CropBlock {
     }
 
     @Override
-    public IntProperty getAgeProperty() {
-        return AGE;
+    protected IntProperty getAgeProperty() {
+        return GREEN_BEAN_AGE;
     }
 
     @Override
@@ -34,6 +43,6 @@ public class GreenBeanCropBlock extends CropBlock {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(AGE);
+        builder.add(GREEN_BEAN_AGE);
     }
 }

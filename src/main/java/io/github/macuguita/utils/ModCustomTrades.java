@@ -105,48 +105,24 @@ public class ModCustomTrades {
                 });
 
 
-        TradeOfferHelper.registerWanderingTraderOffers(1,
-                factories -> {
-                    factories.add((entity, random) -> new TradeOffer(
-                            new TradedItem(ModItems.GREEN_BEAN, 32),
-                            new ItemStack(ModItems.GARLIC, 5),
-                            10, 12, 0.1F
-                    ));
-
-                    factories.add((entity, random) -> new TradeOffer(
-                            new TradedItem(ModItems.GREEN_BEAN, 32),
-                            new ItemStack(ModItems.RED_PEPPER, 5),
-                            10, 12, 0.1F
-                    ));
-
-                    factories.add((entity, random) -> new TradeOffer(
-                            new TradedItem(ModItems.GREEN_BEAN, 32),
-                            new ItemStack(ModItems.GREEN_PEPPER, 5),
-                            10, 12, 0.1F
-                    ));
-                });
-
-        TradeOfferHelper.registerWanderingTraderOffers(2,
-                factories -> {
-                    factories.add((entity, random) -> new TradeOffer(
+        TradeOfferHelper.registerWanderingTraderOffers(builder -> {
+            builder.addOffersToPool(TradeOfferHelper.WanderingTraderOffersBuilder.SELL_COMMON_ITEMS_POOL,
+                    (entity, random) -> new TradeOffer(
                             new TradedItem(ModItems.GARLIC, 64),
                             new ItemStack(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get(), 1),
                             1, 12, 0.15F
-                    ));
-
-                    factories.add((entity, random) -> new TradeOffer(
+                    ),
+                    (entity, random) -> new TradeOffer(
                             new TradedItem(ModItems.RED_PEPPER, 64),
                             new ItemStack(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get(), 1),
                             1, 12, 0.15F
-                    ));
-
-                    factories.add((entity, random) -> new TradeOffer(
+                    ),
+                    (entity, random) -> new TradeOffer(
                             new TradedItem(ModItems.GREEN_PEPPER, 64),
                             new ItemStack(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get(), 1),
                             1, 12, 0.15F
-                    ));
-                });
-
-
+                    )
+            );
+        });
     }
 }

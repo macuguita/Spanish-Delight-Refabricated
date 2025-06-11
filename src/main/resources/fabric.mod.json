@@ -3,9 +3,16 @@
 	"id": "spanishdelight",
 	"version": "${version}",
 	"name": "Spanish Delight Refabricated",
-	"description": "Credits to: DevJulen for originally making the mod, ArBeet for making the textures and vectorwing for creating Farmer's Delight",
+	"description": "An addon for Farmer's Delight Refabricated that adds regional plates from Spain!",
 	"authors": [
 		"macuguita"
+	],
+	"contributors": [
+		"DevJulen",
+		"ArBeet",
+		"vectorwing",
+		"MehVahdJukaar",
+		"MerchantPug"
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/spanish-delight-refabricated",

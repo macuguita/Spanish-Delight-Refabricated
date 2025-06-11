@@ -17,9 +17,15 @@
   "item.spanishdelight.pantumaca": "Pa amb Tomàquet",
   "item.spanishdelight.fried_squid_ring": "Anel de Lurar Fritida",
 
+  "item.spanishdelight.wild_garlic": "Allo Silvestre",
+  "item.spanishdelight.wild_red_pepper": "Pimento Vermello Salvaxe",
+  "item.spanishdelight.wild_green_pepper": "Pimento Verde Salvaxe",
+
   "block.spanishdelight.wild_garlic": "Allo Silvestre",
   "block.spanishdelight.wild_red_pepper": "Pimento Vermello Salvaxe",
   "block.spanishdelight.wild_green_pepper": "Pimento Verde Salvaxe",
+
+  "block.spanishdelight.green_bean_crop": "Feixón Verde",
 
   "tooltip.spanishdelight.squid_ring": "Obtido matando unha lura con calquera coitelo",
   "tooltip.spanishdelight.green_bean": "Comercio co labrego aldeán para conseguilo!",

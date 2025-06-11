@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    "farmersdelight:ham",
+    "#spanishdelight:water_ingredient",
+    "#c:crops/wheat",
+    "#c:eggs",
+    "minecraft:bread"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spanishdelight:croquettes"
+  }
+}

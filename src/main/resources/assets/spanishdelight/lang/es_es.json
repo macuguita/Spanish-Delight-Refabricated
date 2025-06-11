@@ -17,9 +17,15 @@
   "item.spanishdelight.pantumaca": "Pantumaca",
   "item.spanishdelight.fried_squid_ring": "Anilla de Calamar Frita",
 
+  "item.spanishdelight.wild_garlic": "Ajo Salvaje",
+  "item.spanishdelight.wild_red_pepper": "Pimiento Rojo Salvaje",
+  "item.spanishdelight.wild_green_pepper": "Pimiento Verde Salvaje",
+
   "block.spanishdelight.wild_garlic": "Ajo Salvaje",
   "block.spanishdelight.wild_red_pepper": "Pimiento Rojo Salvaje",
   "block.spanishdelight.wild_green_pepper": "Pimiento Verde Salvaje",
+
+  "block.spanishdelight.green_bean_crop": "Judía Verde",
 
   "tooltip.spanishdelight.squid_ring": "Se obtiene matando un calamar con cualquier cuchillo",
   "tooltip.spanishdelight.green_bean": "Intercambia con el aldeano granjero para conseguirla!",

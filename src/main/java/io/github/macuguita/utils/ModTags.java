@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
 
 public class ModTags {
+
     public static class Blocks {
 
         private static TagKey<Block> createTag(String name){
@@ -43,6 +44,4 @@ public class ModTags {
             return TagKey.of(RegistryKeys.BIOME, Identifier.of("c", name));
         }
     }
-
-
 }

@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "spanishdelight:red_pepper"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 3,
+        "id": "spanishdelight:paprika"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

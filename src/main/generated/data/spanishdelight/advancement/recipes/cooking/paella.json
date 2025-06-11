@@ -1,0 +1,87 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chicken_cuts": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:chicken_cuts"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_garlic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:garlic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_green_bean": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:green_bean"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_paprika": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:paprika"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rabbit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:rabbit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "farmersdelight:cooking/paella"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rabbit",
+      "has_chicken_cuts",
+      "has_rice",
+      "has_paprika",
+      "has_green_bean",
+      "has_garlic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "farmersdelight:cooking/paella"
+    ]
+  }
+}
