@@ -10,10 +10,10 @@
   "ingredients": [
     "minecraft:rabbit",
     "farmersdelight:chicken_cuts",
-    "farmersdelight:rice",
+    "#c:crops/rice",
     "spanishdelight:paprika",
     "spanishdelight:green_bean",
-    "spanishdelight:garlic"
+    "#c:crops/garlic"
   ],
   "result": {
     "count": 1,

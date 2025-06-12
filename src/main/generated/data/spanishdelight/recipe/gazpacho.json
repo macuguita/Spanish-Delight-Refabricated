@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "farmersdelight:tomato",
-    "spanishdelight:garlic",
-    "minecraft:water_bucket",
-    "minecraft:bread",
+    "#c:crops/tomato",
+    "#c:crops/garlic",
+    "#c:buckets/water",
+    "#c:bread",
     "minecraft:bowl"
   ],
   "result": {

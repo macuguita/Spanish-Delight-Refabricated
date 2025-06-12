@@ -71,7 +71,7 @@ public class ModItems {
             settings -> new ConsumableItem(settings, true),
             new Item.Settings().food(ModFoodComponents.FRIED_SQUID_RING, ModConsumableComponents.FRIED_SQUID_RING));
 
-    public static Item registerItem(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
+    private static Item registerItem(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SpanishDelightRefabricated.MOD_ID, name));
 
         Item item = itemFactory.apply(settings.registryKey(itemKey));

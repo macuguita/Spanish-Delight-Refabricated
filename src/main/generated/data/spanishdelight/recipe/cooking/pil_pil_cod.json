@@ -11,7 +11,7 @@
     "#c:crops/wheat",
     "minecraft:cod",
     "spanishdelight:sliced_potato",
-    "spanishdelight:garlic"
+    "#c:crops/garlic"
   ],
   "result": {
     "count": 1,

@@ -6,7 +6,7 @@
     "#spanishdelight:water_ingredient",
     "#c:crops/wheat",
     "#c:eggs",
-    "minecraft:bread"
+    "#c:bread"
   ],
   "result": {
     "count": 1,

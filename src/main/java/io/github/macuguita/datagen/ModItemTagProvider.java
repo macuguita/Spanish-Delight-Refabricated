@@ -39,5 +39,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.SLICED_POTATO);
         getOrCreateTagBuilder(ConventionalItemTags.BREAD_FOODS)
                 .add(ModItems.PANTUMACA);
+        getOrCreateTagBuilder(ModTags.Items.BREAD)
+                .addTag(ConventionalItemTags.BREAD_FOODS);
+        getOrCreateTagBuilder(ModTags.Items.GARLIC)
+                .add(ModItems.GARLIC);
     }
 }

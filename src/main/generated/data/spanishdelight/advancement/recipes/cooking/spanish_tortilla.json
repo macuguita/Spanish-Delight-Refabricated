@@ -6,6 +6,12 @@
         "items": [
           {
             "items": "minecraft:egg"
+          },
+          {
+            "items": "minecraft:brown_egg"
+          },
+          {
+            "items": "minecraft:blue_egg"
           }
         ]
       },

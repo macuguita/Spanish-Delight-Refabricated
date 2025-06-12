@@ -45,17 +45,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             @Override
             public void generate() {
                 ShapelessRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.FOOD, ModItems.GAZPACHO)
-                        .input(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get())
-                        .input(ModItems.GARLIC)
-                        .input(Items.WATER_BUCKET)
-                        .input(Items.BREAD)
+                        .input(Ingredient.fromTag(itemLookup.getOrThrow(CommonTags.CROPS_TOMATO)))
+                        .input(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.GARLIC)))
+                        .input(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WATER_BUCKETS)))
+                        .input(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.BREAD)))
                         .input(Items.BOWL)
                         .criterion(hasItem(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()), conditionsFromItem(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()))
                         .criterion(hasItem(ModItems.GARLIC), conditionsFromItem(ModItems.GARLIC))
                         .offerTo(recipeExporter);
                 ShapelessRecipeJsonBuilder.create(Registries.ITEM, RecipeCategory.FOOD, ModItems.PANTUMACA)
-                        .input(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get())
-                        .input(Items.BREAD)
+                        .input(Ingredient.fromTag(itemLookup.getOrThrow(CommonTags.CROPS_TOMATO)))
+                        .input(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.BREAD)))
                         .criterion(hasItem(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()), conditionsFromItem(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()))
                         .criterion(hasItem(Items.BREAD), conditionsFromItem(Items.BREAD))
                         .offerTo(recipeExporter);
@@ -63,10 +63,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.SQUID_RING), RecipeCategory.FOOD, ModItems.FRIED_SQUID_RING, 0.35F, 200)
                         .criterion(hasItem(ModItems.SQUID_RING), conditionsFromItem(ModItems.SQUID_RING))
                         .offerTo(recipeExporter);
-                CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(ModItems.SQUID_RING), RecipeCategory.FOOD, ModItems.FRIED_SQUID_RING, 0.35F, 200)
+                CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(ModItems.SQUID_RING), RecipeCategory.FOOD, ModItems.FRIED_SQUID_RING, 0.35F, 200*3)
                         .criterion(hasItem(ModItems.SQUID_RING), conditionsFromItem(ModItems.SQUID_RING))
                         .offerTo(recipeExporter, ModItems.FRIED_SQUID_RING + "_from_campfire");
-                CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(ModItems.SQUID_RING), RecipeCategory.FOOD, ModItems.FRIED_SQUID_RING, 0.35F, 200)
+                CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(ModItems.SQUID_RING), RecipeCategory.FOOD, ModItems.FRIED_SQUID_RING, 0.35F, 200/2)
                         .criterion(hasItem(ModItems.SQUID_RING), conditionsFromItem(ModItems.SQUID_RING))
                         .offerTo(recipeExporter, ModItems.FRIED_SQUID_RING + "_from_smoker");
 
@@ -84,7 +84,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(Items.SUGAR)
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.WATER_INGREDIENT)))
                         .unlockedByItems(hasItem(Items.WHEAT), Items.WHEAT)
-                        .unlockedByItems(hasItem(Items.EGG), Items.EGG)
+                        .unlockedByItems(hasItem(Items.EGG), Items.EGG, Items.BROWN_EGG, Items.BLUE_EGG)
                         .unlockedByItems(hasItem(Items.SUGAR), Items.SUGAR)
                         .unlockedByItems(hasItem(Items.WATER_BUCKET), Items.WATER_BUCKET)
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
@@ -95,10 +95,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.WATER_INGREDIENT)))
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WHEAT_CROPS)))
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.EGGS)))
-                        .addIngredient(Items.BREAD)
+                        .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.BREAD)))
                         .unlockedByItems(hasItem(Items.WATER_BUCKET), Items.WATER_BUCKET)
                         .unlockedByItems(hasItem(Items.WHEAT), Items.WHEAT)
-                        .unlockedByItems(hasItem(Items.EGG), Items.EGG)
+                        .unlockedByItems(hasItem(Items.EGG), Items.EGG, Items.BROWN_EGG, Items.BLUE_EGG)
                         .unlockedByItems(hasItem(Items.BREAD), Items.BREAD)
                         .setRecipeBookCategory(CookingPotBookCategory.MISC)
                         .build(recipeExporter);
@@ -106,10 +106,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 CookingPotRecipeBuilder.cookingPotRecipe(Registries.ITEM, ModItems.PAELLA, 1, SLOW_COOKING, LARGE_EXP, Items.BOWL)
                         .addIngredient(Items.RABBIT)
                         .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.CHICKEN_CUTS.get())
-                        .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
+                        .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(CommonTags.CROPS_RICE)))
                         .addIngredient(ModItems.PAPRIKA)
                         .addIngredient(ModItems.GREEN_BEAN)
-                        .addIngredient(ModItems.GARLIC)
+                        .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.GARLIC)))
                         .unlockedByItems(hasItem(Items.RABBIT), Items.RABBIT)
                         .unlockedByItems(hasItem(vectorwing.farmersdelight.common.registry.ModItems.CHICKEN_CUTS.get()), vectorwing.farmersdelight.common.registry.ModItems.CHICKEN_CUTS.get())
                         .unlockedByItems(hasItem(vectorwing.farmersdelight.common.registry.ModItems.RICE.get()), vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
@@ -123,7 +123,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WHEAT_CROPS)))
                         .addIngredient(Items.COD)
                         .addIngredient(ModItems.SLICED_POTATO)
-                        .addIngredient(ModItems.GARLIC)
+                        .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.GARLIC)))
                         .unlockedByItems(hasItem(ModItems.GREEN_PEPPER), ModItems.GREEN_PEPPER)
                         .unlockedByItems(hasItem(Items.COD), Items.COD)
                         .unlockedByItems(hasItem(ModItems.SLICED_POTATO), ModItems.SLICED_POTATO)
@@ -140,7 +140,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.EGGS)))
                         .unlockedByItems(hasItem(ModItems.SLICED_POTATO), ModItems.SLICED_POTATO)
                         .unlockedByItems(hasItem(ModItems.SLICED_ONION), ModItems.SLICED_ONION)
-                        .unlockedByItems(hasItem(Items.EGG), Items.EGG)
+                        .unlockedByItems(hasItem(Items.EGG), Items.EGG, Items.BROWN_EGG, Items.BLUE_EGG)
                         .setRecipeBookCategory(CookingPotBookCategory.MEALS)
                         .build(recipeExporter);
 

@@ -8,10 +8,10 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class ModConsumableComponents {
 
-    public static final int BRIEF_DURATION = 600;    // 30 seconds
-    public static final int SHORT_DURATION = 1200;    // 1 minute
-    public static final int MEDIUM_DURATION = 3600;    // 3 minutes
-    public static final int LONG_DURATION = 6000;    // 5 minutes
+    private static final int BRIEF_DURATION = 600;    // 30 seconds
+    private static final int SHORT_DURATION = 1200;    // 1 minute
+    private static final int MEDIUM_DURATION = 3600;    // 3 minutes
+    private static final int LONG_DURATION = 6000;    // 5 minutes
 
     public static final ConsumableComponent SPANISH_TORTILLA = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.NOURISHMENT, LONG_DURATION), 1.0f))
