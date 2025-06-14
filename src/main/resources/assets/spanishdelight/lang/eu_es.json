@@ -17,13 +17,22 @@
   "item.spanishdelight.pantumaca": "Pantumaka",
   "item.spanishdelight.fried_squid_ring": "Txipiroi Eraztun Frijitua",
 
+  "item.spanishdelight.wild_garlic": "Baratxuri Basatia",
+  "item.spanishdelight.wild_red_pepper": "Piper Gorri Basatia",
+  "item.spanishdelight.wild_green_pepper": "Piper Berde Basatia",
+
   "block.spanishdelight.wild_garlic": "Baratxuri Basatia",
   "block.spanishdelight.wild_red_pepper": "Piper Gorri Basatia",
   "block.spanishdelight.wild_green_pepper": "Piper Berde Basatia",
 
+  "block.spanishdelight.green_bean_crop": "Baba Berdea",
+
   "tooltip.spanishdelight.squid_ring": "Txipiroi bat edozein labainarekin hiltzean lortu daiteke",
   "tooltip.spanishdelight.green_bean": "Nekazari baserritararekin objekturen bat trukatu hau lortzeko!",
   "tooltip.spanishdelight.press_shift": "SHIFT sakatu gehio jakiteko",
+
+  "tag.item.spanishdelight.water_ingredient": "Urezko osagaia",
+  "tag.item.c.crops.garlic": "Baratxuria",
 
   "creativetab.sdelight_tab": "Spanish Delight"
 }

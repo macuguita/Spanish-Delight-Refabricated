@@ -17,13 +17,22 @@
   "item.spanishdelight.pantumaca": "Pantumaca",
   "item.spanishdelight.fried_squid_ring": "Fried Squid Rings",
 
+  "item.spanishdelight.wild_garlic": "Wild Garlic",
+  "item.spanishdelight.wild_red_pepper": "Wild Red Pepper",
+  "item.spanishdelight.wild_green_pepper": "Wild Green Pepper",
+
   "block.spanishdelight.wild_garlic": "Wild Garlic",
   "block.spanishdelight.wild_red_pepper": "Wild Red Pepper",
   "block.spanishdelight.wild_green_pepper": "Wild Green Pepper",
 
+  "block.spanishdelight.green_bean_crop": "Green Bean",
+
   "tooltip.spanishdelight.squid_ring": "Obtained by killing a squid with any knife",
   "tooltip.spanishdelight.green_bean": "Go trade with the farmer villager to obtain it!",
   "tooltip.spanishdelight.press_shift": "Press SHIFT for for info",
+
+  "tag.item.spanishdelight.water_ingredient": "Water ingredient",
+  "tag.item.c.crops.garlic": "Garlic",
 
   "creativetab.sdelight_tab": "Spanish Delight"
 }

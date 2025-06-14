@@ -17,13 +17,22 @@
   "item.spanishdelight.pantumaca": "Pa amb Tomàquet",
   "item.spanishdelight.fried_squid_ring": "Anella de Calamar Fregides",
 
+  "item.spanishdelight.wild_garlic": "All Salvatge",
+  "item.spanishdelight.wild_red_pepper": "Pebrot Vermell Salvatge",
+  "item.spanishdelight.wild_green_pepper": "Pebrot Verd Salvatge",
+
   "block.spanishdelight.wild_garlic": "All Salvatge",
   "block.spanishdelight.wild_red_pepper": "Pebrot Vermell Salvatge",
   "block.spanishdelight.wild_green_pepper": "Pebrot Verd Salvatge",
 
+  "block.spanishdelight.green_bean_crop": "Mongeta Tendra",
+
   "tooltip.spanishdelight.squid_ring": "S'obté matant un calamar amb qualsevol ganivet",
   "tooltip.spanishdelight.green_bean": "Intercanvia amb el vilatà granger per aconseguir-la!",
   "tooltip.spanishdelight.press_shift": "Clica SHIFT per a més informació",
+
+  "tag.item.spanishdelight.water_ingredient": "Ingredient d'aigua",
+  "tag.item.c.crops.garlic": "All",
 
   "creativetab.sdelight_tab": "Spanish Delight"
 }
