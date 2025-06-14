@@ -1,0 +1,38 @@
+{
+  "item.spanishdelight.paprika": "Паприка",
+  "item.spanishdelight.sliced_potato": "Нарезанный картофель",
+  "item.spanishdelight.sliced_onion": "Нарезанный лук",
+  "item.spanishdelight.garlic": "Чеснок",
+  "item.spanishdelight.green_bean": "Зеленая фасоль",
+  "item.spanishdelight.red_pepper": "Красный перец",
+  "item.spanishdelight.green_pepper": "Зеленый перец",
+  "item.spanishdelight.squid_ring": "Кольца кальмара",
+  "item.spanishdelight.spanish_tortilla": "Испанская тортилья",
+  "item.spanishdelight.paella": "Паэлья",
+  "item.spanishdelight.pil_pil_cod": "Треска пиль-пиль",
+  "item.spanishdelight.croquettes": "Крокеты",
+  "item.spanishdelight.brava_potatoes": "Картофель Брава",
+  "item.spanishdelight.churro": "Чуррос",
+  "item.spanishdelight.gazpacho": "Гаспачо",
+  "item.spanishdelight.pantumaca": "Хлеб с помидором",
+  "item.spanishdelight.fried_squid_ring": "Обжаренные кольца кальмара",
+
+  "item.spanishdelight.wild_garlic": "Дикий чеснок",
+  "item.spanishdelight.wild_red_pepper": "Дикий красный перец",
+  "item.spanishdelight.wild_green_pepper": "Дикий зеленый перец",
+
+  "block.spanishdelight.wild_garlic": "Дикий чеснок",
+  "block.spanishdelight.wild_red_pepper": "Дикий красный перец",
+  "block.spanishdelight.wild_green_pepper": "Дикий зеленый перец",
+
+  "block.spanishdelight.green_bean_crop": "Зеленая фасоль",
+
+  "tooltip.spanishdelight.squid_ring": "Получается при убийстве спрутов ножом",
+  "tooltip.spanishdelight.green_bean": "Поторгуйте с крестьянином-фермером, чтобы получить!",
+  "tooltip.spanishdelight.press_shift": "Нажмите SHIFT для подробностей",
+
+  "tag.item.spanishdelight.water_ingredient": "Ингредиент воды",
+  "tag.item.c.crops.garlic": "Чеснок",
+
+  "creativetab.sdelight_tab": "Spanish Delight"
+}
