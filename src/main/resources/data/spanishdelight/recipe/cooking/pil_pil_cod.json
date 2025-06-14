@@ -4,9 +4,6 @@
   "experience": 2.0,
   "ingredients": [
     {
-      "tag": "c:crops/wheat"
-    },
-    {
       "item": "minecraft:cod"
     },
     {
