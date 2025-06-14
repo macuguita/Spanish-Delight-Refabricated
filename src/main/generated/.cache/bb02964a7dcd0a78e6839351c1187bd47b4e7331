@@ -1,2 +1,7 @@
-// 1.20.1	2025-01-10T04:16:22.873241026	Spanish Delight Refabricated/Tags for minecraft:item
-de31bfd8b76dd248b5f98fe6466661c83cc4e61e data/spanishdelight/tags/items/water_ingredient.json
+// 1.20.1	2025-06-15T01:44:59.814282183	Spanish Delight Refabricated/Tags for minecraft:item
+6fb2153b6497583d7b48029abae7e927dd418f33 data/c/tags/items/crops/potato.json
+b14b0b5127f1ee9615c54d953a6f7426c139aecf data/farmersdelight/tags/items/meals.json
+e0c5837f86a77abe977744d80aafb9262d4ac480 data/farmersdelight/tags/items/wild_crops.json
+52780acf36457b51576124972aeff9bde5b79210 data/c/tags/items/foods/bread.json
+2486795310a35420e3950b35c22d1181c7f8cbd7 data/c/tags/items/crops/garlic.json
+a3e1112b7c3881b656aa8080cc78b4b60c84e2ab data/c/tags/items/crops/onion.json
