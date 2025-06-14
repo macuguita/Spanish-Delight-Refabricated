@@ -8,7 +8,7 @@
   "cookingtime": 400,
   "experience": 2.0,
   "ingredients": [
-    "#c:crops/wheat",
+    "spanishdelight:green_pepper",
     "minecraft:cod",
     "spanishdelight:sliced_potato",
     "#c:crops/garlic"

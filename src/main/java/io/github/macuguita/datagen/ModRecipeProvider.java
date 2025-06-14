@@ -133,7 +133,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .build(recipeExporter);
 
                 CookingPotRecipeBuilder.cookingPotRecipe(Registries.ITEM, ModItems.PIL_PIL_COD, 1, SLOW_COOKING, LARGE_EXP, Items.BOWL)
-                        .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WHEAT_CROPS)))
+                        .addIngredient(ModItems.GREEN_PEPPER)
                         .addIngredient(Items.COD)
                         .addIngredient(ModItems.SLICED_POTATO)
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.GARLIC)))
