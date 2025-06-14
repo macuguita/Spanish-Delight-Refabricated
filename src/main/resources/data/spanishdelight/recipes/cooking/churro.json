@@ -4,7 +4,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "c:flour/wheat"
+      "tag": "c:crops/wheat"
     },
     {
       "tag": "c:eggs"
@@ -12,9 +12,23 @@
     {
       "item": "minecraft:sugar"
     },
-    {
-      "tag": "spanishdelight:water_ingredient"
-    }
+    [
+      {
+        "tag": "c:buckets/water"
+      },
+      {
+        "tag": "c:drinks/water"
+      },
+      {
+        "tag": "c:drinks/watery"
+      },
+      {
+        "tag": "c:buckets/milk"
+      },
+      {
+        "tag": "c:drinks/milk"
+      }
+    ]
   ],
   "recipe_book_tab": "meals",
   "result": {

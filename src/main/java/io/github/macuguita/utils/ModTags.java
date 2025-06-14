@@ -8,8 +8,6 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
 
-import javax.swing.text.html.HTML;
-
 public class ModTags {
     public static class Blocks {
 
@@ -20,10 +18,15 @@ public class ModTags {
 
     public static class Items {
 
-        public static TagKey<Item> WATER_INGREDIENT = createTag("water_ingredient");
+        public static TagKey<Item> GARLIC = createCommonTag("crops/garlic");
+        public static TagKey<Item> CROPS_POTATO = createCommonTag("crops/potato");
+        public static TagKey<Item> BREAD_FOODS = createCommonTag("foods/bread");
 
         private static TagKey<Item> createTag(String name){
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(SpanishDelightRefabricated.MOD_ID, name));
+        }
+        private static TagKey<Item> createCommonTag(String name){
+            return TagKey.of(RegistryKeys.ITEM, Identifier.of("c", name));
         }
         private static TagKey<Item> createVanillaTag(String name){
             return TagKey.of(RegistryKeys.ITEM, Identifier.of("minecraft", name));

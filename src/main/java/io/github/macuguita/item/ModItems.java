@@ -2,6 +2,8 @@ package io.github.macuguita.item;
 
 import io.github.macuguita.SpanishDelightRefabricated;
 import io.github.macuguita.block.ModBlocks;
+import io.github.macuguita.item.custom.GreenBeanItem;
+import io.github.macuguita.item.custom.SquidRingItem;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
@@ -21,10 +23,10 @@ public class ModItems {
     public static Item SLICED_POTATO = registerItem("sliced_potato", new Item(new Item.Settings().food(ModFoodComponents.SLICED_POTATO)));
     public static Item SLICED_ONION = registerItem("sliced_onion", new Item(new Item.Settings().food(ModFoodComponents.SLICED_ONION)));
     public static Item GARLIC = registerItem("garlic", new Item(new Item.Settings().food(ModFoodComponents.GARLIC)));
-    public static Item GREEN_BEAN = registerItem("green_bean", new AliasedBlockItem(ModBlocks.GREEN_BEAN_CROP, new Item.Settings().food(ModFoodComponents.GREEN_BEAN)));
+    public static Item GREEN_BEAN = registerItem("green_bean", new GreenBeanItem(ModBlocks.GREEN_BEAN_CROP, new Item.Settings().food(ModFoodComponents.GREEN_BEAN)));
     public static Item RED_PEPPER = registerItem("red_pepper", new Item(new Item.Settings().food(ModFoodComponents.PEPPER)));
     public static Item GREEN_PEPPER = registerItem("green_pepper", new Item(new Item.Settings().food(ModFoodComponents.PEPPER)));
-    public static Item SQUID_RING = registerItem("squid_ring", new Item(new Item.Settings().food(ModFoodComponents.SQUID_RING)));
+    public static Item SQUID_RING = registerItem("squid_ring", new SquidRingItem(new Item.Settings().food(ModFoodComponents.SQUID_RING)));
     public static Item SPANISH_TORTILLA = registerItem("spanish_tortilla", new ConsumableItem(new Item.Settings().food(ModFoodComponents.SPANISH_TORTILLA), true));
     public static Item PAELLA = registerItem("paella", new ConsumableItem(bowlFoodItem(ModFoodComponents.PAELLA), true));
     public static Item PIL_PIL_COD = registerItem("pil_pil_cod", new ConsumableItem(bowlFoodItem(ModFoodComponents.PIL_PIL_COD), true));

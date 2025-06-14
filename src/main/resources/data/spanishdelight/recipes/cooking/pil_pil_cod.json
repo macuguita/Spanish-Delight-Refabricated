@@ -7,7 +7,7 @@
   "experience": 2.0,
   "ingredients": [
     {
-      "item": "spanishdelight:green_pepper"
+      "item": "minecraft:cod"
     },
     {
       "item": "minecraft:cod"
@@ -16,7 +16,7 @@
       "item": "spanishdelight:sliced_potato"
     },
     {
-      "item": "spanishdelight:garlic"
+      "tag": "c:crops/garlic"
     }
   ],
   "recipe_book_tab": "meals",

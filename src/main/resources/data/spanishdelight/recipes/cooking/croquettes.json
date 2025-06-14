@@ -1,0 +1,40 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:ham"
+    },
+    [
+      {
+        "tag": "c:buckets/water"
+      },
+      {
+        "tag": "c:drinks/water"
+      },
+      {
+        "tag": "c:drinks/watery"
+      },
+      {
+        "tag": "c:buckets/milk"
+      },
+      {
+        "tag": "c:drinks/milk"
+      }
+    ],
+    {
+      "tag": "c:crops/wheat"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:foods/breads"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "spanishdelight:croquettes"
+  }
+}
