@@ -1,8 +1,5 @@
 {
   "type": "farmersdelight:cooking",
-  "container": {
-    "item": "minecraft:bowl"
-  },
   "cookingtime": 400,
   "experience": 2.0,
   "ingredients": [
@@ -13,7 +10,7 @@
       "item": "farmersdelight:chicken_cuts"
     },
     {
-      "item": "farmersdelight:rice"
+      "tag": "c:crops/rice"
     },
     {
       "item": "spanishdelight:paprika"
@@ -22,11 +19,12 @@
       "item": "spanishdelight:green_bean"
     },
     {
-      "item": "spanishdelight:garlic"
+      "tag": "c:crops/garlic"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "spanishdelight:paella"
+    "id": "spanishdelight:paella",
+    "count": 1
   }
 }

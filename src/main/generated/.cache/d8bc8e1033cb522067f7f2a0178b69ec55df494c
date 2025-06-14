@@ -1,4 +1,4 @@
-// 1.21.1	2025-01-11T14:07:21.072688164	Spanish Delight Refabricated/Model Definitions
+// 1.21.1	2025-06-15T00:42:25.454270545	Spanish Delight Refabricated/Model Definitions
 6ba1c015b27f508d80d1c5a72d6030f272756d2b assets/spanishdelight/blockstates/wild_red_pepper.json
 c5f6caadb0d94c152530bd733b160d770fe79f22 assets/spanishdelight/models/block/green_bean_stage3.json
 46a6b9e03d580780fa65339e54274350a7f323f4 assets/spanishdelight/models/item/wild_green_pepper.json
@@ -11,8 +11,8 @@ bd3e7b74d4639f95ec1ae3f22a5cf4dd88787056 assets/spanishdelight/models/block/gree
 333c17cf0a6e85475b692459b688f77c85ff7756 assets/spanishdelight/models/item/sliced_potato.json
 6b1c093588630129aaf6b135a3fab2a9d4e52129 assets/spanishdelight/models/item/fried_squid_ring.json
 b45e0d01381bec3267053d9432dab59e7569cdd4 assets/spanishdelight/models/item/brava_potatoes.json
-a364bf29eb75d48179fb8f73330dc182e7462cac assets/spanishdelight/models/item/garlic.json
 a0272aa79a29dea2ed972fd1cbf783cc98335982 assets/spanishdelight/models/block/green_bean_stage0.json
+a364bf29eb75d48179fb8f73330dc182e7462cac assets/spanishdelight/models/item/garlic.json
 b1780fcb535da08f71fd8a643be8eb0393be82fa assets/spanishdelight/models/item/croquettes.json
 6a8bf5e314e3ef2e64d600443ac7dd76ed11c90d assets/spanishdelight/models/item/wild_red_pepper.json
 da0aec14c6718daf02592694f77ed3bc672f37b6 assets/spanishdelight/models/item/paella.json

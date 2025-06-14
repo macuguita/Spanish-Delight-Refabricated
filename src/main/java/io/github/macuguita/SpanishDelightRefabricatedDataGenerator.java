@@ -1,9 +1,6 @@
 package io.github.macuguita;
 
-import io.github.macuguita.datagen.ModItemTagProvider;
-import io.github.macuguita.datagen.ModLootTableProvider;
-import io.github.macuguita.datagen.ModModelProvider;
-import io.github.macuguita.datagen.ModRecipeProvider;
+import io.github.macuguita.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -12,6 +9,7 @@ public class SpanishDelightRefabricatedDataGenerator implements DataGeneratorEnt
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
+		pack.addProvider(ModBlockTagProvider::new);
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);

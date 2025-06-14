@@ -3,16 +3,16 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "farmersdelight:tomato"
+      "tag": "c:crops/tomato"
     },
     {
-      "item": "spanishdelight:garlic"
+      "tag": "c:crops/garlic"
     },
     {
-      "item": "minecraft:water_bucket"
+      "tag": "c:buckets/water"
     },
     {
-      "item": "minecraft:bread"
+      "tag": "c:foods/bread"
     },
     {
       "item": "minecraft:bowl"

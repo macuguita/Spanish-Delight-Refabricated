@@ -7,11 +7,13 @@
   ],
   "result": [
     {
-      "count": 3,
-      "item": "spanishdelight:sliced_onion"
+      "item": {
+        "count": 3,
+        "id": "spanishdelight:sliced_onion"
+      }
     }
   ],
   "tool": {
-    "tag": "c:tools/knives"
+    "tag": "c:tools/knife"
   }
 }

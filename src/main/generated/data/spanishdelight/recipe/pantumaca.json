@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "farmersdelight:tomato"
+      "tag": "c:crops/tomato"
     },
     {
-      "item": "minecraft:bread"
+      "tag": "c:foods/bread"
     }
   ],
   "result": {

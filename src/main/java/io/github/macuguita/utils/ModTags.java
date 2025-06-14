@@ -18,10 +18,13 @@ public class ModTags {
 
     public static class Items {
 
-        public static TagKey<Item> WATER_INGREDIENT = createTag("water_ingredient");
+        public static TagKey<Item> GARLIC = createCommonTag("crops/garlic");
 
         private static TagKey<Item> createTag(String name){
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(SpanishDelightRefabricated.MOD_ID, name));
+        }
+        private static TagKey<Item> createCommonTag(String name){
+            return TagKey.of(RegistryKeys.ITEM, Identifier.of("c", name));
         }
         private static TagKey<Item> createVanillaTag(String name){
             return TagKey.of(RegistryKeys.ITEM, Identifier.of("minecraft", name));

@@ -1,6 +1,6 @@
 {
   "type": "farmersdelight:cooking",
-  "cookingtime": 100,
+  "cookingtime": 400,
   "experience": 2.0,
   "ingredients": [
     {
@@ -10,20 +10,21 @@
       "item": "spanishdelight:sliced_onion"
     },
     {
-      "item": "minecraft:egg"
+      "tag": "c:eggs"
     },
     {
-      "item": "minecraft:egg"
+      "tag": "c:eggs"
     },
     {
-      "item": "minecraft:egg"
+      "tag": "c:eggs"
     },
     {
-      "item": "minecraft:egg"
+      "tag": "c:eggs"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "spanishdelight:spanish_tortilla"
+    "id": "spanishdelight:spanish_tortilla",
+    "count": 1
   }
 }

@@ -1,26 +1,43 @@
 {
   "type": "farmersdelight:cooking",
-  "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
     {
       "item": "farmersdelight:ham"
     },
     {
-      "tag": "spanishdelight:water_ingredient"
+      "fabric:type": "fabric:any",
+      "ingredients": [
+        {
+          "tag": "c:buckets/water"
+        },
+        {
+          "tag": "c:drinks/water"
+        },
+        {
+          "tag": "c:drinks/watery"
+        },
+        {
+          "tag": "c:buckets/milk"
+        },
+        {
+          "tag": "c:drinks/milk"
+        }
+      ]
     },
     {
-      "tag": "c:flour/wheat"
+      "tag": "c:crops/wheat"
     },
     {
       "tag": "c:eggs"
     },
     {
-      "item": "minecraft:bread"
+      "tag": "c:foods/breads"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "spanishdelight:croquettes"
+    "id": "spanishdelight:croquettes",
+    "count": 1
   }
 }

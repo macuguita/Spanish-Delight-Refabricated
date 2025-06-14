@@ -27,17 +27,16 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
-    RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
-
     public ModLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
     @Override
     public void generate() {
-        addDrop(ModBlocks.WILD_GARLIC, block -> wildCropDrops(block, ModItems.GARLIC));
-        addDrop(ModBlocks.WILD_RED_PEPPER, block -> wildCropDrops(block, ModItems.RED_PEPPER));
-        addDrop(ModBlocks.WILD_GREEN_PEPPER, block -> wildCropDrops(block, ModItems.GREEN_PEPPER));
+        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
+        addDrop(ModBlocks.WILD_GARLIC, block -> wildCropDrops(block, ModItems.GARLIC, impl));
+        addDrop(ModBlocks.WILD_RED_PEPPER, block -> wildCropDrops(block, ModItems.RED_PEPPER, impl));
+        addDrop(ModBlocks.WILD_GREEN_PEPPER, block -> wildCropDrops(block, ModItems.GREEN_PEPPER, impl));
 
         LootCondition.Builder builder5 = BlockStatePropertyLootCondition.builder(ModBlocks.GREEN_BEAN_CROP)
                 .properties(StatePredicate.Builder.create().exactMatch(PotatoesBlock.AGE, 5));
@@ -56,11 +55,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         );
     }
 
-    public LootTable.Builder wildCropDrops(Block drop, Item item) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
+    public LootTable.Builder wildCropDrops(Block drop, Item item, RegistryWrapper.Impl<Enchantment> impl) {
         return this.dropsWithSilkTouch(
                 drop,
-                (LootPoolEntry.Builder<?>)this.applyExplosionDecay(
+                this.applyExplosionDecay(
                         drop,
                         ItemEntry.builder(item)
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 5.0F)))
@@ -68,5 +66,4 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 )
         );
     }
-
 }

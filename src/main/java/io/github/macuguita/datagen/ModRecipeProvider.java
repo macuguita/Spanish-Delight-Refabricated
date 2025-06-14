@@ -2,8 +2,10 @@ package io.github.macuguita.datagen;
 
 import io.github.macuguita.SpanishDelightRefabricated;
 import io.github.macuguita.item.ModItems;
+import io.github.macuguita.utils.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -12,6 +14,7 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -25,18 +28,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter consumer) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.GAZPACHO)
-                .input(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get())
-                .input(ModItems.GARLIC)
-                .input(Items.WATER_BUCKET)
-                .input(Items.BREAD)
+                .input(CommonTags.CROPS_TOMATO)
+                .input(ModTags.Items.GARLIC)
+                .input(ConventionalItemTags.WATER_BUCKETS)
+                .input(ConventionalItemTags.BREAD_FOODS)
                 .input(Items.BOWL)
                 .criterion(hasItem(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()), conditionsFromItem(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()))
                 .criterion(hasItem(ModItems.GARLIC), conditionsFromItem(ModItems.GARLIC))
                 .offerTo(consumer);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.PANTUMACA)
-                .input(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get())
-                .input(Items.BREAD)
+                .input(CommonTags.CROPS_TOMATO)
+                .input(ConventionalItemTags.BREAD_FOODS)
                 .criterion(hasItem(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()), conditionsFromItem(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()))
                 .criterion(hasItem(Items.BREAD), conditionsFromItem(Items.BREAD))
                 .offerTo(consumer);
