@@ -4,6 +4,7 @@ import io.github.macuguita.item.ModItems;
 import io.github.macuguita.utils.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fabricmc.fabric.api.recipe.v1.ingredient.DefaultCustomIngredients;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.data.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.recipe.RecipeExporter;
@@ -82,7 +83,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WHEAT_CROPS)))
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.EGGS)))
                         .addIngredient(Items.SUGAR)
-                        .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.WATER_INGREDIENT)))
+                        .addIngredient(DefaultCustomIngredients.any(
+                                Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WATER_BUCKETS)),
+                                Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WATER_DRINKS)),
+                                Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WATERY_DRINKS)),
+                                Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.MILK_BUCKETS)),
+                                Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.MILK_DRINKS))
+                        ))
                         .unlockedByItems(hasItem(Items.WHEAT), Items.WHEAT)
                         .unlockedByItems(hasItem(Items.EGG), Items.EGG, Items.BROWN_EGG, Items.BLUE_EGG)
                         .unlockedByItems(hasItem(Items.SUGAR), Items.SUGAR)
@@ -92,7 +99,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 CookingPotRecipeBuilder.cookingPotRecipe(Registries.ITEM, ModItems.CROQUETTES, 1, NORMAL_COOKING, MEDIUM_EXP)
                         .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.HAM.get())
-                        .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ModTags.Items.WATER_INGREDIENT)))
+                        .addIngredient(DefaultCustomIngredients.any(
+                                Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WATER_BUCKETS)),
+                                Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WATER_DRINKS)),
+                                Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WATERY_DRINKS)),
+                                Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.MILK_BUCKETS)),
+                                Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.MILK_DRINKS))
+                        ))
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.WHEAT_CROPS)))
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.EGGS)))
                         .addIngredient(Ingredient.fromTag(itemLookup.getOrThrow(ConventionalItemTags.BREAD_FOODS)))

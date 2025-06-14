@@ -18,12 +18,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ModTags.Items.WATER_INGREDIENT)
-                .addOptionalTag(ConventionalItemTags.WATER_BUCKETS)
-                .addOptionalTag(ConventionalItemTags.WATER_DRINKS)
-                .addOptionalTag(ConventionalItemTags.WATERY_DRINKS)
-                .addOptionalTag(ConventionalItemTags.MILK_BUCKETS)
-                .addOptionalTag(ConventionalItemTags.MILK_DRINKS);
         getOrCreateTagBuilder(vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS_ITEM)
                 .add(ModBlocks.WILD_GARLIC.asItem())
                 .add(ModBlocks.WILD_GREEN_PEPPER.asItem())

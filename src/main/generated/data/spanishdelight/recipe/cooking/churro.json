@@ -5,7 +5,16 @@
     "#c:crops/wheat",
     "#c:eggs",
     "minecraft:sugar",
-    "#spanishdelight:water_ingredient"
+    {
+      "fabric:type": "fabric:any",
+      "ingredients": [
+        "#c:buckets/water",
+        "#c:drinks/water",
+        "#c:drinks/watery",
+        "#c:buckets/milk",
+        "#c:drinks/milk"
+      ]
+    }
   ],
   "result": {
     "count": 3,

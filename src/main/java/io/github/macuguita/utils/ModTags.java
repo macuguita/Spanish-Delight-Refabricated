@@ -19,7 +19,6 @@ public class ModTags {
 
     public static class Items {
 
-        public static TagKey<Item> WATER_INGREDIENT = createTag("water_ingredient");
         public static TagKey<Item> GARLIC = createCommonTag("crops/garlic");
 
         private static TagKey<Item> createTag(String name){

@@ -3,7 +3,16 @@
   "experience": 1.0,
   "ingredients": [
     "farmersdelight:ham",
-    "#spanishdelight:water_ingredient",
+    {
+      "fabric:type": "fabric:any",
+      "ingredients": [
+        "#c:buckets/water",
+        "#c:drinks/water",
+        "#c:drinks/watery",
+        "#c:buckets/milk",
+        "#c:drinks/milk"
+      ]
+    },
     "#c:crops/wheat",
     "#c:eggs",
     "#c:foods/bread"
