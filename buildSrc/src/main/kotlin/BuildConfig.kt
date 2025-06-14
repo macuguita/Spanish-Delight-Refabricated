@@ -13,5 +13,5 @@ object BuildConfig {
 
     val fabricVersion: String = "0.126.0+" + minecraftVersion
     val modMenuVersion: String = "14.0.0-rc.2"
-    val fdrfVersion: String = minecraftVersion + "-3.1.1+refabricated"
+    val fdrfVersion: String = minecraftVersion + "-3.1.4+refabricated"
 }
