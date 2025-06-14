@@ -5,7 +5,7 @@
     "#c:crops/tomato",
     "#c:crops/garlic",
     "#c:buckets/water",
-    "#c:bread",
+    "#c:foods/bread",
     "minecraft:bowl"
   ],
   "result": {

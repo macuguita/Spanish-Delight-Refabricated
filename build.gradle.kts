@@ -16,6 +16,11 @@ loom {
 
             ideConfigGenerated(true)
         }
+        configureEach {
+            if (name == "server") {
+                vmArg("-Dfabric-tag-conventions-v2.missingTagTranslationWarning=VERBOSE")
+            }
+        }
     }
 }
 

@@ -6,7 +6,7 @@
     "#spanishdelight:water_ingredient",
     "#c:crops/wheat",
     "#c:eggs",
-    "#c:bread"
+    "#c:foods/bread"
   ],
   "result": {
     "count": 1,
