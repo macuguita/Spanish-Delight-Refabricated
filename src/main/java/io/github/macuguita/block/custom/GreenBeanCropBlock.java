@@ -17,13 +17,13 @@ public class GreenBeanCropBlock extends CropBlock {
     public static final IntProperty GREEN_BEAN_AGE = Properties.AGE_5;
     public static final MapCodec<GreenBeanCropBlock> CODEC = createCodec(GreenBeanCropBlock::new);
 
+    public GreenBeanCropBlock(AbstractBlock.Settings settings) {
+        super(settings);
+    }
+
     @Override
     public MapCodec<GreenBeanCropBlock> getCodec() {
         return CODEC;
-    }
-
-    public GreenBeanCropBlock(AbstractBlock.Settings settings) {
-        super(settings);
     }
 
     @Override

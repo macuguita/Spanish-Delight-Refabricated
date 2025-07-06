@@ -16,7 +16,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ModTags.WILD_CROPS)
+        valueLookupBuilder(ModTags.WILD_CROPS)
                 .add(ModBlocks.WILD_GARLIC)
                 .add(ModBlocks.WILD_GREEN_PEPPER)
                 .add(ModBlocks.WILD_RED_PEPPER);

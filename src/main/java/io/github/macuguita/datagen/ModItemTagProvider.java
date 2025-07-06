@@ -12,28 +12,29 @@ import vectorwing.farmersdelight.common.tag.CommonTags;
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
+
     public ModItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
         super(output, completableFuture);
     }
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS_ITEM)
+		valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS_ITEM)
                 .add(ModBlocks.WILD_GARLIC.asItem())
                 .add(ModBlocks.WILD_GREEN_PEPPER.asItem())
                 .add(ModBlocks.WILD_RED_PEPPER.asItem());
-        getOrCreateTagBuilder(vectorwing.farmersdelight.common.tag.ModTags.MEALS)
+		valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.MEALS)
                 .add(ModItems.PAELLA)
                 .add(ModItems.PIL_PIL_COD)
                 .add(ModItems.BRAVA_POTATOES)
                 .add(ModItems.GAZPACHO);
-        getOrCreateTagBuilder(CommonTags.CROPS_ONION)
+		valueLookupBuilder(CommonTags.CROPS_ONION)
                 .add(ModItems.SLICED_ONION);
-        getOrCreateTagBuilder(ConventionalItemTags.POTATO_CROPS)
+		valueLookupBuilder(ConventionalItemTags.POTATO_CROPS)
                 .add(ModItems.SLICED_POTATO);
-        getOrCreateTagBuilder(ConventionalItemTags.BREAD_FOODS)
+		valueLookupBuilder(ConventionalItemTags.BREAD_FOODS)
                 .add(ModItems.PANTUMACA);
-        getOrCreateTagBuilder(ModTags.Items.GARLIC)
+		valueLookupBuilder(ModTags.Items.GARLIC)
                 .add(ModItems.GARLIC);
     }
 }

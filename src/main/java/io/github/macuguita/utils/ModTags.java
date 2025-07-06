@@ -12,7 +12,7 @@ public class ModTags {
 
     public static class Blocks {
 
-        private static TagKey<Block> createTag(String name){
+        private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(SpanishDelightRefabricated.MOD_ID, name));
         }
     }
@@ -21,13 +21,15 @@ public class ModTags {
 
         public static TagKey<Item> GARLIC = createCommonTag("crops/garlic");
 
-        private static TagKey<Item> createTag(String name){
+        private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(SpanishDelightRefabricated.MOD_ID, name));
         }
-        private static TagKey<Item> createCommonTag(String name){
+
+        private static TagKey<Item> createCommonTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of("c", name));
         }
-        private static TagKey<Item> createVanillaTag(String name){
+
+        private static TagKey<Item> createVanillaTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of("minecraft", name));
         }
     }
@@ -39,11 +41,11 @@ public class ModTags {
         public static TagKey<Biome> IS_TAIGA = createVanillaTag("is_taiga");
 
 
-        private static TagKey<Biome> createVanillaTag(String name){
+        private static TagKey<Biome> createVanillaTag(String name) {
             return TagKey.of(RegistryKeys.BIOME, Identifier.of("minecraft", name));
         }
 
-        private static TagKey<Biome> createCommonTag(String name){
+        private static TagKey<Biome> createCommonTag(String name) {
             return TagKey.of(RegistryKeys.BIOME, Identifier.of("c", name));
         }
     }

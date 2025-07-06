@@ -33,7 +33,7 @@ public class ModCustomTrades {
                             new ItemStack(ModItems.RED_PEPPER, 3),
                             8, 8, 0.02F
                     ));
-                    
+
                     factories.add((entity, random) -> new TradeOffer(
                             new TradedItem(vectorwing.farmersdelight.common.registry.ModItems.RICE.get(), 27),
                             new ItemStack(ModItems.GREEN_PEPPER, 9),

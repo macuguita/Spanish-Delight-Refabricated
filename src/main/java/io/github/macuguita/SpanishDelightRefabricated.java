@@ -26,53 +26,53 @@ import vectorwing.farmersdelight.common.tag.CommonTags;
 
 public class SpanishDelightRefabricated implements ModInitializer {
 
-	public static final String MOD_ID = "spanishdelight";
+    public static final String MOD_ID = "spanishdelight";
 
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	private static final RegistryKey<LootTable> SQUID_LOOT_TABLE_ID = vanillaKey("entities/squid");
-	private static final RegistryKey<LootTable> GLOW_SQUID_LOOT_TABLE_ID = vanillaKey("entities/glow_squid");
+    private static final RegistryKey<LootTable> SQUID_LOOT_TABLE_ID = vanillaKey("entities/squid");
+    private static final RegistryKey<LootTable> GLOW_SQUID_LOOT_TABLE_ID = vanillaKey("entities/glow_squid");
 
-	@Override
-	public void onInitialize() {
-		ModBlocks.registerModBlocks();
-		ModItems.registerModItems();
-		ModItemGroups.registerItemGroups();
-		ModFeatures.init();
-		ModCustomTrades.registerCustomTrades();
+    private static RegistryKey<LootTable> vanillaKey(String path) {
+        return RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.ofVanilla(path));
+    }
 
-		LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
-			if (source.isBuiltin()) {
-				if (SQUID_LOOT_TABLE_ID == key) {
-					tableBuilder.pool(LootPool.builder().with(ItemEntry.builder(ModItems.SQUID_RING)
-									.conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
-													EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
-											)).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(false))))
-											.and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F)))))
-							.pool(LootPool.builder().with(ItemEntry.builder(ModItems.FRIED_SQUID_RING)
-									.conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
-											EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
-									)).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(true)))
-											.and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F))))));
-				}
+    @Override
+    public void onInitialize() {
+        ModBlocks.registerModBlocks();
+        ModItems.registerModItems();
+        ModItemGroups.registerItemGroups();
+        ModFeatures.init();
+        ModCustomTrades.registerCustomTrades();
 
-				if (GLOW_SQUID_LOOT_TABLE_ID == key) {
-					tableBuilder.pool(LootPool.builder().with(ItemEntry.builder(ModItems.SQUID_RING)
-									.conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
-													EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
-											)).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(false))))
-											.and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F)))))
-							.pool(LootPool.builder().with(ItemEntry.builder(ModItems.FRIED_SQUID_RING)
-									.conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
-											EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
-									)).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(true)))
-											.and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F))))));
-				}
-			}
-		});
-	}
+        LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
+            if (source.isBuiltin()) {
+                if (SQUID_LOOT_TABLE_ID == key) {
+                    tableBuilder.pool(LootPool.builder().with(ItemEntry.builder(ModItems.SQUID_RING)
+                                    .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
+                                                    EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
+                                            )).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(false))))
+                                            .and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F)))))
+                            .pool(LootPool.builder().with(ItemEntry.builder(ModItems.FRIED_SQUID_RING)
+                                    .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
+                                            EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
+                                    )).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(true)))
+                                            .and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F))))));
+                }
 
-	private static RegistryKey<LootTable> vanillaKey(String path) {
-		return RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.ofVanilla(path));
-	}
+                if (GLOW_SQUID_LOOT_TABLE_ID == key) {
+                    tableBuilder.pool(LootPool.builder().with(ItemEntry.builder(ModItems.SQUID_RING)
+                                    .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
+                                                    EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
+                                            )).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(false))))
+                                            .and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F)))))
+                            .pool(LootPool.builder().with(ItemEntry.builder(ModItems.FRIED_SQUID_RING)
+                                    .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
+                                            EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
+                                    )).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(true)))
+                                            .and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F))))));
+                }
+            }
+        });
+    }
 }
