@@ -1,6 +1,7 @@
 plugins {
     id("fabric-loom").version("1.10-SNAPSHOT")
     id("maven-publish")
+    id("com.modrinth.minotaur") version "2.+"
 }
 
 loom {
@@ -80,6 +81,26 @@ dependencies {
 
     modImplementation("vectorwing:FarmersDelight:${BuildConfig.fdrfVersion}") {
         exclude(group = "net.fabricmc")
+    }
+}
+
+val changelogText: String = File("CHANGELOG.md").readText()
+
+modrinth {
+    token.set(System.getenv("MODRINTH_TOKEN"))
+    projectId.set("E2LV3K2B")
+    versionNumber.set(BuildConfig.modVersion)
+    versionName.set("Spanish Delight Refabricated " + versionNumber.get())
+    versionType.set("release")
+    uploadFile.set(tasks.remapJar)
+    additionalFiles.add(tasks.remapSourcesJar)
+    changelog.set(changelogText)
+    gameVersions.addAll("1.21.6", "1.21.7", "1.21.8")
+    loaders.addAll("fabric", "quilt")
+    dependencies {
+        required.project("fabric-api")
+        required.project("farmers-delight-refabricated")
+        optional.project("emi")
     }
 }
 
