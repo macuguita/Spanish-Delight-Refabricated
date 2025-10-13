@@ -6,9 +6,11 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
@@ -23,14 +25,14 @@ public class SpanishDelightRefabricatedClient implements ClientModInitializer {
 
         ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, list) -> {
             if (itemStack.isOf(ModItems.SQUID_RING)) {
-                if (Screen.hasShiftDown()) {
+                if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow(), InputUtil.GLFW_KEY_LEFT_SHIFT)) {
                     list.add(Text.translatable("tooltip.spanishdelight.squid_ring"));
                 } else {
                     list.add(Text.translatable("tooltip.spanishdelight.press_shift").formatted(Formatting.YELLOW));
                 }
             }
             if (itemStack.isOf(ModItems.GREEN_BEAN)) {
-                if (Screen.hasShiftDown()) {
+                if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow(), InputUtil.GLFW_KEY_LEFT_SHIFT)) {
                     list.add(Text.translatable("tooltip.spanishdelight.green_bean"));
                 } else {
                     list.add(Text.translatable("tooltip.spanishdelight.press_shift").formatted(Formatting.YELLOW));

@@ -47,29 +47,16 @@ public class SpanishDelightRefabricated implements ModInitializer {
 
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (source.isBuiltin()) {
-                if (SQUID_LOOT_TABLE_ID == key) {
+                if (SQUID_LOOT_TABLE_ID == key || GLOW_SQUID_LOOT_TABLE_ID == key) {
                     tableBuilder.pool(LootPool.builder().with(ItemEntry.builder(ModItems.SQUID_RING)
-                                    .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
+                                    .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityReference.ATTACKER, EntityPredicate.Builder.create().equipment(
                                                     EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
-                                            )).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(false))))
+                                            )).and(EntityPropertiesLootCondition.builder(LootContext.EntityReference.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(false))))
                                             .and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F)))))
                             .pool(LootPool.builder().with(ItemEntry.builder(ModItems.FRIED_SQUID_RING)
-                                    .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
+                                    .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityReference.ATTACKER, EntityPredicate.Builder.create().equipment(
                                             EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
-                                    )).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(true)))
-                                            .and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F))))));
-                }
-
-                if (GLOW_SQUID_LOOT_TABLE_ID == key) {
-                    tableBuilder.pool(LootPool.builder().with(ItemEntry.builder(ModItems.SQUID_RING)
-                                    .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
-                                                    EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
-                                            )).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(false))))
-                                            .and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F)))))
-                            .pool(LootPool.builder().with(ItemEntry.builder(ModItems.FRIED_SQUID_RING)
-                                    .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.create().equipment(
-                                            EntityEquipmentPredicate.Builder.create().mainhand(ItemPredicate.Builder.create().tag(registries.getOrThrow(RegistryKeys.ITEM), CommonTags.TOOLS_KNIFE))
-                                    )).and(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(true)))
+                                    )).and(EntityPropertiesLootCondition.builder(LootContext.EntityReference.THIS, EntityPredicate.Builder.create().flags(EntityFlagsPredicate.Builder.create().onFire(true)))
                                             .and(RandomChanceWithEnchantedBonusLootCondition.builder(registries, 0.5F, 0.1F))))));
                 }
             }

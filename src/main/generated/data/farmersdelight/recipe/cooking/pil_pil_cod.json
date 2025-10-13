@@ -1,6 +1,5 @@
 {
   "type": "farmersdelight:cooking",
-  "category": "meals",
   "container": {
     "count": 1,
     "id": "minecraft:bowl"
@@ -13,6 +12,7 @@
     "spanishdelight:sliced_potato",
     "#c:crops/garlic"
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "count": 1,
     "id": "spanishdelight:pil_pil_cod"

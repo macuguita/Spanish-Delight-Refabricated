@@ -1,6 +1,5 @@
 {
   "type": "farmersdelight:cooking",
-  "category": "meals",
   "experience": 2.0,
   "ingredients": [
     "spanishdelight:sliced_potato",
@@ -10,6 +9,7 @@
     "#c:eggs",
     "#c:eggs"
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "count": 1,
     "id": "spanishdelight:spanish_tortilla"
