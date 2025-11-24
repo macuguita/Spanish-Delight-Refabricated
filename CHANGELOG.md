@@ -1,1 +1,1 @@
-- updated to 1.21.8
+- Updated uk_ua: [pr #6](https://github.com/macuguita/Spanish-Delight-Refabricated/pull/6)
