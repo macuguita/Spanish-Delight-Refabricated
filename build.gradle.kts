@@ -1,7 +1,7 @@
 plugins {
     id("fabric-loom").version("1.10-SNAPSHOT")
     id("maven-publish")
-    id("com.modrinth.minotaur") version "2.+"
+    id("me.modmuss50.mod-publish-plugin").version("1.0.0")
 }
 
 loom {
@@ -41,12 +41,12 @@ base {
 
 repositories {
     maven {
-    name = "Greenhouse Maven"
-    url = uri("https://repo.greenhouse.house/releases/")
-}
+        name = "Greenhouse Maven"
+        url = uri("https://maven.greenhouse.lgbt/releases/")
+    }
     maven {
         name = "Greenhouse Maven"
-        url = uri("https://repo.greenhouse.house/snapshots/") // Porting Lib Hotfixes
+        url = uri("https://maven.greenhouse.lgbt/snapshots/") // Porting Lib Hotfixes
     }
     maven {
         name = "Porting Lib Betas"
@@ -86,21 +86,27 @@ dependencies {
 
 val changelogText: String = File("CHANGELOG.md").readText()
 
-modrinth {
-    token.set(System.getenv("MODRINTH_TOKEN"))
-    projectId.set("E2LV3K2B")
-    versionNumber.set(BuildConfig.modVersion)
-    versionName.set("Spanish Delight Refabricated " + versionNumber.get())
-    versionType.set("release")
-    uploadFile.set(tasks.remapJar)
-    additionalFiles.add(tasks.remapSourcesJar)
-    changelog.set(changelogText)
-    gameVersions.addAll("1.21.6", "1.21.7", "1.21.8")
-    loaders.addAll("fabric", "quilt")
-    dependencies {
-        required.project("fabric-api")
-        required.project("farmers-delight-refabricated")
-        optional.project("emi")
+publishMods {
+    changelog = changelogText
+    file.set(tasks.remapJar.get().archiveFile)
+    additionalFiles.from(tasks.remapSourcesJar.get().archiveFile)
+    displayName = BuildConfig.modName + " " + BuildConfig.modVersion
+    version = BuildConfig.modVersion
+    if (BuildConfig.modVersion.contains("beta")) {
+        type = BETA
+    } else {
+        type = STABLE
+    }
+    modLoaders.add("fabric")
+    modLoaders.add("quilt")
+    dryRun = providers.environmentVariable("MODRINTH_TOKEN").getOrNull() == null
+    modrinth {
+        projectId = "E2LV3K2B"
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        for (version in BuildConfig.supportedVersions)
+            minecraftVersions.add(version)
+        requires("fabric-api")
+        requires("farmers-delight-refabricated")
     }
 }
 
