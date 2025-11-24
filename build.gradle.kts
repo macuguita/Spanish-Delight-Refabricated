@@ -1,6 +1,7 @@
 plugins {
     id("fabric-loom").version("1.10-SNAPSHOT")
     id("maven-publish")
+    id("me.modmuss50.mod-publish-plugin").version("1.0.0")
 }
 
 loom {
@@ -40,12 +41,12 @@ base {
 
 repositories {
     maven {
-    name = "Greenhouse Maven"
-    url = uri("https://repo.greenhouse.house/releases/")
-}
+        name = "Greenhouse Maven"
+        url = uri("https://maven.greenhouse.lgbt/releases/")
+    }
     maven {
         name = "Greenhouse Maven"
-        url = uri("https://repo.greenhouse.house/snapshots/") // Porting Lib Hotfixes
+        url = uri("https://maven.greenhouse.lgbt/snapshots/") // Porting Lib Hotfixes
     }
     maven {
         name = "Porting Lib Betas"
@@ -80,6 +81,32 @@ dependencies {
 
     modImplementation("vectorwing:FarmersDelight:${BuildConfig.fdrfVersion}") {
         exclude(group = "net.fabricmc")
+    }
+}
+
+val changelogText: String = File("CHANGELOG.md").readText()
+
+publishMods {
+    changelog = changelogText
+    file.set(tasks.remapJar.get().archiveFile)
+    additionalFiles.from(tasks.remapSourcesJar.get().archiveFile)
+    displayName = BuildConfig.modName + " " + BuildConfig.modVersion
+    version = BuildConfig.modVersion
+    if (BuildConfig.modVersion.contains("beta")) {
+        type = BETA
+    } else {
+        type = STABLE
+    }
+    modLoaders.add("fabric")
+    modLoaders.add("quilt")
+    dryRun = providers.environmentVariable("MODRINTH_TOKEN").getOrNull() == null
+    modrinth {
+        projectId = "E2LV3K2B"
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        for (version in BuildConfig.supportedVersions)
+            minecraftVersions.add(version)
+        requires("fabric-api")
+        requires("farmers-delight-refabricated")
     }
 }
 
