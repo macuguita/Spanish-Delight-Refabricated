@@ -1,43 +1,43 @@
 package io.github.macuguita.item;
 
-import net.minecraft.component.type.ConsumableComponent;
-import net.minecraft.component.type.ConsumableComponents;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
-import vectorwing.farmersdelight.common.registry.ModEffects;
+import vectorwing.farmersdelight.common.FoodValues;
+
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
 public class ModConsumableComponents {
 
-    private static final int BRIEF_DURATION = 600;    // 30 seconds
-    private static final int SHORT_DURATION = 1200;    // 1 minute
-    private static final int MEDIUM_DURATION = 3600;    // 3 minutes
-    private static final int LONG_DURATION = 6000;    // 5 minutes
+	private static final int BRIEF_DURATION = 600;    // 30 seconds
+	private static final int SHORT_DURATION = 1200;    // 1 minute
+	private static final int MEDIUM_DURATION = 3600;    // 3 minutes
+	private static final int LONG_DURATION = 6000;    // 5 minutes
 
-    public static final ConsumableComponent CROQUETTES = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.NOURISHMENT, SHORT_DURATION), 1.0f))
-            .build();
-    public static final ConsumableComponent CHURRO = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.COMFORT, SHORT_DURATION), 1.0f))
-            .build();
-    public static final ConsumableComponent GAZPACHO = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.NOURISHMENT, SHORT_DURATION), 1.0f))
-            .build();
-    public static final ConsumableComponent FRIED_SQUID_RING = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.COMFORT, SHORT_DURATION), 1.0f))
-            .build();
-    public static final ConsumableComponent BRAVA_POTATOES = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.COMFORT, MEDIUM_DURATION), 1.0f))
-            .build();
-    public static final ConsumableComponent PANTUMACA = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.NOURISHMENT, MEDIUM_DURATION), 1.0f))
-            .build();
-    public static final ConsumableComponent SPANISH_TORTILLA = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.NOURISHMENT, LONG_DURATION), 1.0f))
-            .build();
-    public static final ConsumableComponent PAELLA = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.COMFORT, LONG_DURATION), 1.0f))
-            .build();
-    public static final ConsumableComponent PIL_PIL_COD = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.COMFORT, LONG_DURATION), 1.0f))
-            .build();
+	public static final Consumable CROQUETTES = Consumables.defaultFood()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(SHORT_DURATION)))
+			.build();
+	public static final Consumable CHURRO = Consumables.defaultFood()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.comfort(SHORT_DURATION)))
+			.build();
+	public static final Consumable GAZPACHO = Consumables.defaultFood()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(SHORT_DURATION)))
+			.build();
+	public static final Consumable FRIED_SQUID_RING = Consumables.defaultFood()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.comfort(SHORT_DURATION)))
+			.build();
+	public static final Consumable BRAVA_POTATOES = Consumables.defaultFood()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.comfort(MEDIUM_DURATION)))
+			.build();
+	public static final Consumable PANTUMACA = Consumables.defaultFood()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(MEDIUM_DURATION)))
+			.build();
+	public static final Consumable SPANISH_TORTILLA = Consumables.defaultFood()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(LONG_DURATION)))
+			.build();
+	public static final Consumable PAELLA = Consumables.defaultFood()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.comfort(LONG_DURATION)))
+			.build();
+	public static final Consumable PIL_PIL_COD = Consumables.defaultFood()
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.comfort(LONG_DURATION)))
+			.build();
 }

@@ -1,5 +1,5 @@
 plugins {
-    id("fabric-loom").version("1.11-SNAPSHOT")
+    id("net.fabricmc.fabric-loom-remap").version("1.14-SNAPSHOT")
     id("maven-publish")
     id("me.modmuss50.mod-publish-plugin").version("1.0.0")
 }
@@ -67,19 +67,23 @@ repositories {
         name = "TerraformersMC"
         url = uri("https://maven.terraformersmc.com/")
     }
+    flatDir { dirs("libs") }
 }
 
 dependencies {
     minecraft("com.mojang:minecraft:${BuildConfig.minecraftVersion}")
-    mappings("net.fabricmc:yarn:${BuildConfig.yarnMappings}:v2")
+    mappings(loom.layered {
+        officialMojangMappings()
+        BuildConfig.parchmentMappings?.let { parchment("org.parchmentmc.data:parchment-${BuildConfig.minecraftVersion}:$it@zip") }
+    })
     modImplementation("net.fabricmc:fabric-loader:${BuildConfig.loaderVersion}")
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation("net.fabricmc.fabric-api:fabric-api:${BuildConfig.fabricVersion}")
 
-    modImplementation("com.terraformersmc:modmenu:${BuildConfig.modMenuVersion}") {
-        exclude(group = "net.fabricmc")
-    }
+//    modImplementation("com.terraformersmc:modmenu:${BuildConfig.modMenuVersion}") {
+//        exclude(group = "net.fabricmc")
+//    }
 
     modImplementation("vectorwing:FarmersDelight:${BuildConfig.fdrfVersion}") {
         exclude(group = "net.fabricmc")

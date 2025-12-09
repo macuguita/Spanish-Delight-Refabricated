@@ -1,43 +1,42 @@
 package io.github.macuguita;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import io.github.macuguita.block.ModBlocks;
 import io.github.macuguita.item.ModItems;
+
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.network.chat.Component;
+
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.render.BlockRenderLayer;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.util.InputUtil;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-
 public class SpanishDelightRefabricatedClient implements ClientModInitializer {
 
-    @Override
-    public void onInitializeClient() {
-        BlockRenderLayerMap.putBlock(ModBlocks.WILD_GARLIC, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks.WILD_RED_PEPPER, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks.WILD_GREEN_PEPPER, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks.GREEN_BEAN_CROP, BlockRenderLayer.CUTOUT);
+	@Override
+	public void onInitializeClient() {
+		BlockRenderLayerMap.putBlock(ModBlocks.WILD_GARLIC, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.WILD_RED_PEPPER, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.WILD_GREEN_PEPPER, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.GREEN_BEAN_CROP, ChunkSectionLayer.CUTOUT);
 
-        ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, list) -> {
-            if (itemStack.isOf(ModItems.SQUID_RING)) {
-                if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow(), InputUtil.GLFW_KEY_LEFT_SHIFT)) {
-                    list.add(Text.translatable("tooltip.spanishdelight.squid_ring"));
-                } else {
-                    list.add(Text.translatable("tooltip.spanishdelight.press_shift").formatted(Formatting.YELLOW));
-                }
-            }
-            if (itemStack.isOf(ModItems.GREEN_BEAN)) {
-                if (InputUtil.isKeyPressed(MinecraftClient.getInstance().getWindow(), InputUtil.GLFW_KEY_LEFT_SHIFT)) {
-                    list.add(Text.translatable("tooltip.spanishdelight.green_bean"));
-                } else {
-                    list.add(Text.translatable("tooltip.spanishdelight.press_shift").formatted(Formatting.YELLOW));
-                }
-            }
-        });
-    }
+		ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, list) -> {
+			if (itemStack.is(ModItems.SQUID_RING)) {
+				if (InputConstants.isKeyDown(Minecraft.getInstance().getWindow(), InputConstants.KEY_LSHIFT)) {
+					list.add(Component.translatable("tooltip.spanishdelight.squid_ring"));
+				} else {
+					list.add(Component.translatable("tooltip.spanishdelight.press_shift").withStyle(ChatFormatting.YELLOW));
+				}
+			}
+			if (itemStack.is(ModItems.GREEN_BEAN)) {
+				if (InputConstants.isKeyDown(Minecraft.getInstance().getWindow(), InputConstants.KEY_LSHIFT)) {
+					list.add(Component.translatable("tooltip.spanishdelight.green_bean"));
+				} else {
+					list.add(Component.translatable("tooltip.spanishdelight.press_shift").withStyle(ChatFormatting.YELLOW));
+				}
+			}
+		});
+	}
 }
