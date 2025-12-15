@@ -1,0 +1,37 @@
+{
+  "item.spanishdelight.paprika": "파프리카",
+  "item.spanishdelight.sliced_potato": "감자 조각",
+  "item.spanishdelight.sliced_onion": "양파 조각",
+  "item.spanishdelight.garlic": "마늘",
+  "item.spanishdelight.green_bean": "콩",
+  "item.spanishdelight.red_pepper": "빨간 피망",
+  "item.spanishdelight.green_pepper": "피망",
+  "item.spanishdelight.squid_ring": "오징어 링",
+  "item.spanishdelight.spanish_tortilla": "스페인식 토르티야",
+  "item.spanishdelight.paella": "파에야",
+  "item.spanishdelight.pil_pil_cod": "바칼라오 알 필 필",
+  "item.spanishdelight.croquettes": "크로켓",
+  "item.spanishdelight.brava_potatoes": "파타타스 브라바스",
+  "item.spanishdelight.churro": "츄러스",
+  "item.spanishdelight.gazpacho": "가스파초",
+  "item.spanishdelight.pantumaca": "파 암 토마케트",
+  "item.spanishdelight.fried_squid_ring": "오징어 링 튀김",
+
+  "item.spanishdelight.wild_garlic": "야생 마늘",
+  "item.spanishdelight.wild_red_pepper": "야생 빨간 피망",
+  "item.spanishdelight.wild_green_pepper": "야생 피망",
+
+  "block.spanishdelight.wild_garlic": "야생 마늘",
+  "block.spanishdelight.wild_red_pepper": "야생 빨간 피망",
+  "block.spanishdelight.wild_green_pepper": "야생 피망",
+
+  "block.spanishdelight.green_bean_crop": "콩",
+
+  "tooltip.spanishdelight.squid_ring": "식칼로 오징어를 잡아 획득할 수 있습니다.",
+  "tooltip.spanishdelight.green_bean": "주민과 거래하여 획득할 수 있습니다.",
+  "tooltip.spanishdelight.press_shift": "SHIFT 키를 눌러 자세한 설명 보기",
+
+  "tag.item.c.crops.garlic": "마늘",
+
+  "creativetab.sdelight_tab": "Spanish Delight"
+}
