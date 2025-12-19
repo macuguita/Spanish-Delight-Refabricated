@@ -1,3 +1,1 @@
-- Updated to 1.21.11
-- Updated to mojang mappings
-- Fixed effect particles showing when item is eaten
+- Updated ko_kr: [pr #7](https://github.com/macuguita/Spanish-Delight-Refabricated/pull/7)
