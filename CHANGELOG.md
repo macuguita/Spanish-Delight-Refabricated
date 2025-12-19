@@ -1,1 +1,1 @@
-- Updated uk_ua: [pr #6](https://github.com/macuguita/Spanish-Delight-Refabricated/pull/6)
+- Updated uk_ua: [pr #7](https://github.com/macuguita/Spanish-Delight-Refabricated/pull/7)
