@@ -1,1 +1,2 @@
-- Updated ko_kr: [pr #7](https://github.com/macuguita/Spanish-Delight-Refabricated/pull/7)
+- Updated to 26.1 \
+-# some things with worldgen on base farmer's delight are broken, so they are broken here too

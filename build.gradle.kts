@@ -2,6 +2,7 @@ plugins {
     id("net.fabricmc.fabric-loom").version("1.15-SNAPSHOT")
     id("maven-publish")
     id("me.modmuss50.mod-publish-plugin").version("1.0.0")
+    id("co.uzzu.dotenv.gradle") version "4.0.0"
 }
 
 loom {
@@ -142,10 +143,9 @@ publishMods {
     }
     modLoaders.add("fabric")
     modLoaders.add("quilt")
-    dryRun = providers.environmentVariable("MODRINTH_TOKEN").getOrNull() == null
     modrinth {
         projectId = "E2LV3K2B"
-        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        accessToken = env.MODRINTH_API_KEY.orNull()
         for (version in BuildConfig.supportedVersions)
             minecraftVersions.add(version)
         requires("fabric-api")
@@ -157,16 +157,22 @@ publishMods {
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
+            groupId = BuildConfig.mavenGroup
             artifactId = BuildConfig.modId
+            version = BuildConfig.modVersion + "+${BuildConfig.minecraftVersion}"
             from(components["java"])
         }
     }
-
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
-        // Notice: This block does NOT have the same function as the block in the top level.
-        // The repositories here will be used for publishing your artifact, not for
-        // retrieving dependencies.
+        mavenLocal()
+        maven {
+            name = "macuguita"
+            url = uri("https://maven.macuguita.com/releases")
+
+            credentials {
+                username = env.MAVEN_USERNAME.orNull()
+                password = env.MAVEN_KEY.orNull()
+            }
+        }
     }
 }
