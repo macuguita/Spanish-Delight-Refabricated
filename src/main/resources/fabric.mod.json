@@ -23,13 +23,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"io.github.macuguita.SpanishDelightRefabricated"
+      "com.macuguita.spanishdelight.SpanishDelightRefabricated"
 		],
 		"client": [
-			"io.github.macuguita.SpanishDelightRefabricatedClient"
+      "com.macuguita.spanishdelight.SpanishDelightRefabricatedClient"
 		],
 		"fabric-datagen": [
-			"io.github.macuguita.SpanishDelightRefabricatedDataGenerator"
+      "com.macuguita.spanishdelight.SpanishDelightRefabricatedDataGenerator"
 		]
 	},
 	"depends": {

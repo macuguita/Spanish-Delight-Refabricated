@@ -1,0 +1,12 @@
+{
+  "gives": {
+    "count": 10,
+    "id": "spanishdelight:green_bean"
+  },
+  "max_uses": 10.0,
+  "reputation_discount": 0.02,
+  "wants": {
+    "id": "minecraft:emerald"
+  },
+  "xp": 8.0
+}

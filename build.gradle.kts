@@ -1,5 +1,5 @@
 plugins {
-    id("net.fabricmc.fabric-loom-remap").version("1.14-SNAPSHOT")
+    id("net.fabricmc.fabric-loom").version("1.15-SNAPSHOT")
     id("maven-publish")
     id("me.modmuss50.mod-publish-plugin").version("1.0.0")
 }
@@ -67,52 +67,28 @@ repositories {
         name = "TerraformersMC"
         url = uri("https://maven.terraformersmc.com/")
     }
-    flatDir { dirs("libs") }
+    maven {
+        name = "Cassian's Maven"
+        url = uri("https://maven.cassian.cc/")
+        content {
+            includeGroupAndSubgroups("cc.cassian")
+        }
+    }
 }
 
 dependencies {
     minecraft("com.mojang:minecraft:${BuildConfig.minecraftVersion}")
-    mappings(loom.layered {
-        officialMojangMappings()
-        BuildConfig.parchmentMappings?.let { parchment("org.parchmentmc.data:parchment-${BuildConfig.minecraftVersion}:$it@zip") }
-    })
-    modImplementation("net.fabricmc:fabric-loader:${BuildConfig.loaderVersion}")
+    implementation("net.fabricmc:fabric-loader:${BuildConfig.loaderVersion}")
 
     // Fabric API. This is technically optional, but you probably want it anyway.
-    modImplementation("net.fabricmc.fabric-api:fabric-api:${BuildConfig.fabricVersion}")
+    implementation("net.fabricmc.fabric-api:fabric-api:${BuildConfig.fabricVersion}")
 
-//    modImplementation("com.terraformersmc:modmenu:${BuildConfig.modMenuVersion}") {
+//    implementation("com.terraformersmc:modmenu:${BuildConfig.modMenuVersion}") {
 //        exclude(group = "net.fabricmc")
 //    }
 
-    modImplementation("vectorwing:FarmersDelight:${BuildConfig.fdrfVersion}") {
+    implementation("vectorwing:FarmersDelight:${BuildConfig.fdrfVersion}") {
         exclude(group = "net.fabricmc")
-    }
-}
-
-val changelogText: String = File("CHANGELOG.md").readText()
-
-publishMods {
-    changelog = changelogText
-    file.set(tasks.remapJar.get().archiveFile)
-    additionalFiles.from(tasks.remapSourcesJar.get().archiveFile)
-    displayName = BuildConfig.modName + " " + BuildConfig.modVersion
-    version = BuildConfig.modVersion
-    if (BuildConfig.modVersion.contains("beta")) {
-        type = BETA
-    } else {
-        type = STABLE
-    }
-    modLoaders.add("fabric")
-    modLoaders.add("quilt")
-    dryRun = providers.environmentVariable("MODRINTH_TOKEN").getOrNull() == null
-    modrinth {
-        projectId = "E2LV3K2B"
-        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
-        for (version in BuildConfig.supportedVersions)
-            minecraftVersions.add(version)
-        requires("fabric-api")
-        requires("farmers-delight-refabricated")
     }
 }
 
@@ -132,7 +108,7 @@ tasks.processResources {
 }
 
 tasks.withType<JavaCompile>().configureEach {
-    options.release.set(21)
+    options.release.set(25)
 }
 
 java {
@@ -141,13 +117,39 @@ java {
     // If you remove this line, sources will not be generated.
     withSourcesJar()
 
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
 }
 
 tasks.jar {
     from("LICENSE") {
         rename { "${it}_${BuildConfig.modId}"}
+    }
+}
+
+val changelogText: String = File("CHANGELOG.md").readText()
+
+publishMods {
+    changelog = changelogText
+    file = tasks.jar.map { it.archiveFile.get() }
+    additionalFiles.from(tasks.named<org.gradle.jvm.tasks.Jar>("sourcesJar").map { it.archiveFile.get() })
+    displayName = BuildConfig.modName + " " + BuildConfig.modVersion
+    version = BuildConfig.modVersion
+    if (BuildConfig.modVersion.contains("beta")) {
+        type = BETA
+    } else {
+        type = STABLE
+    }
+    modLoaders.add("fabric")
+    modLoaders.add("quilt")
+    dryRun = providers.environmentVariable("MODRINTH_TOKEN").getOrNull() == null
+    modrinth {
+        projectId = "E2LV3K2B"
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        for (version in BuildConfig.supportedVersions)
+            minecraftVersions.add(version)
+        requires("fabric-api")
+        requires("farmers-delight-refabricated")
     }
 }
 

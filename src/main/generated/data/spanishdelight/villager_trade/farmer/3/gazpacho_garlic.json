@@ -1,0 +1,12 @@
+{
+  "gives": {
+    "count": 20,
+    "id": "spanishdelight:garlic"
+  },
+  "max_uses": 10.0,
+  "reputation_discount": 0.02,
+  "wants": {
+    "id": "spanishdelight:gazpacho"
+  },
+  "xp": 8.0
+}

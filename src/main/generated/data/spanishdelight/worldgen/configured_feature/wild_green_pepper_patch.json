@@ -1,0 +1,10 @@
+{
+  "type": "farmersdelight:in_order",
+  "config": {
+    "features": [
+      "spanishdelight:coarse_dirt",
+      "spanishdelight:wild_green_pepper",
+      "spanishdelight:short_grass"
+    ]
+  }
+}

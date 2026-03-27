@@ -1,0 +1,13 @@
+{
+  "gives": {
+    "count": 9,
+    "id": "spanishdelight:green_pepper"
+  },
+  "max_uses": 8.0,
+  "reputation_discount": 0.02,
+  "wants": {
+    "count": 27.0,
+    "id": "farmersdelight:rice"
+  },
+  "xp": 8.0
+}

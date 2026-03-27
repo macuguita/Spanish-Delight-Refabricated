@@ -1,0 +1,12 @@
+{
+  "gives": {
+    "id": "farmersdelight:diamond_knife"
+  },
+  "max_uses": 1.0,
+  "reputation_discount": 0.15,
+  "wants": {
+    "count": 64.0,
+    "id": "spanishdelight:garlic"
+  },
+  "xp": 12.0
+}

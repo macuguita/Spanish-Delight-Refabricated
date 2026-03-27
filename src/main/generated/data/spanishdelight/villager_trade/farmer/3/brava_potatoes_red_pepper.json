@@ -1,0 +1,12 @@
+{
+  "gives": {
+    "count": 20,
+    "id": "spanishdelight:red_pepper"
+  },
+  "max_uses": 10.0,
+  "reputation_discount": 0.02,
+  "wants": {
+    "id": "spanishdelight:brava_potatoes"
+  },
+  "xp": 8.0
+}
