@@ -103,7 +103,8 @@ tasks.processResources {
             "license"               to BuildConfig.license,
             "loaderVersion"         to BuildConfig.loaderVersion,
             "minecraftVersion"      to BuildConfig.minecraftVersion,
-            "minecraftVersionRange" to BuildConfig.minecraftVersionRange
+            "minecraftVersionRange" to BuildConfig.minecraftVersionRange,
+            "fdrfVersion" to BuildConfig.fdrfVersion
         )
     }
 }

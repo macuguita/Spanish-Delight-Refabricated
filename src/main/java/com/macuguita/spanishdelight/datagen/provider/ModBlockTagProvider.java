@@ -20,7 +20,7 @@
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.macuguita.spanishdelight.datagen;
+package com.macuguita.spanishdelight.datagen.provider;
 
 import java.util.concurrent.CompletableFuture;
 

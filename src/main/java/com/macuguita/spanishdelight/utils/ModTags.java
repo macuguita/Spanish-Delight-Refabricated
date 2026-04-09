@@ -59,10 +59,13 @@ public class ModTags {
 
 	public static class Biomes {
 
-		public static TagKey<Biome> IS_PLAINS = createCommonTag("is_plains");
-		public static TagKey<Biome> IS_SAVANNA = createVanillaTag("is_savanna");
-		public static TagKey<Biome> IS_TAIGA = createVanillaTag("is_taiga");
+		public static TagKey<Biome> IS_PLAINS = createTag("is_plains");
+		public static TagKey<Biome> IS_SAVANNA = createTag("is_savanna");
+		public static TagKey<Biome> IS_TAIGA = createTag("is_taiga");
 
+		private static TagKey<Biome> createTag(String name) {
+			return TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(SpanishDelightRefabricated.MOD_ID, name));
+		}
 
 		private static TagKey<Biome> createVanillaTag(String name) {
 			return TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("minecraft", name));

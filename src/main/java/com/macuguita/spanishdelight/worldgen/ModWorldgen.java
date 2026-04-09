@@ -28,10 +28,12 @@ import com.macuguita.spanishdelight.SpanishDelightRefabricated;
 import com.macuguita.spanishdelight.block.ModBlocks;
 import com.macuguita.spanishdelight.utils.ModTags;
 
+import net.minecraft.core.Holder;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
 
 import vectorwing.farmersdelight.common.registry.ModBiomeFeatures;
+import vectorwing.farmersdelight.common.registry.ModBiomeModifiers;
 import vectorwing.farmersdelight.common.world.configuration.InOrderFeatureConfiguration;
 
 import net.minecraft.core.HolderGetter;
@@ -69,26 +71,13 @@ import vectorwing.farmersdelight.common.world.filter.BiomeTagFilter;
 
 public class ModWorldgen {
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> COARSE_DIRT_CONFIGURED = registerConfiguredFeature("coarse_dirt");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> SHORT_GRASS_CONFIGURED = registerConfiguredFeature("short_grass");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> WILD_GARLIC_CONFIGURED = registerConfiguredFeature("wild_garlic");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> WILD_GREEN_PEPPER_CONFIGURED = registerConfiguredFeature("wild_green_pepper");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> WILD_RED_PEPPER_CONFIGURED = registerConfiguredFeature("wild_red_pepper");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> WILD_GREEN_PEPPER_CONFIGURED = registerConfiguredFeature("wild_green_pepper");
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> WILD_GARLIC_PATCH_CONFIGURED = registerConfiguredFeature("wild_garlic_patch");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> WILD_RED_PEPPER_PATCH_CONFIGURED = registerConfiguredFeature("wild_red_pepper_patch");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> WILD_GREEN_PEPPER_PATCH_CONFIGURED = registerConfiguredFeature("wild_green_pepper_patch");
-
-
-	public static final ResourceKey<PlacedFeature> COARSE_DIRT_PLACED = registerPlacedFeature("coarse_dirt");
-	public static final ResourceKey<PlacedFeature> SHORT_GRASS_PLACED = registerPlacedFeature("short_grass");
 	public static final ResourceKey<PlacedFeature> WILD_GARLIC_PLACED = registerPlacedFeature("wild_garlic");
-	public static final ResourceKey<PlacedFeature> WILD_GREEN_PEPPER_PLACED = registerPlacedFeature("wild_green_pepper");
 	public static final ResourceKey<PlacedFeature> WILD_RED_PEPPER_PLACED = registerPlacedFeature("wild_red_pepper");
-
-	public static final ResourceKey<PlacedFeature> WILD_GARLIC_PATCH_PLACED = registerPlacedFeature("wild_garlic_patch");
-	public static final ResourceKey<PlacedFeature> WILD_RED_PEPPER_PATCH_PLACED = registerPlacedFeature("wild_red_pepper_patch");
-	public static final ResourceKey<PlacedFeature> WILD_GREEN_PEPPER_PATCH_PLACED = registerPlacedFeature("wild_green_pepper_patch");
+	public static final ResourceKey<PlacedFeature> WILD_GREEN_PEPPER_PLACED = registerPlacedFeature("wild_green_pepper");
 
 	private static ResourceKey<ConfiguredFeature<?, ?>> registerConfiguredFeature(String id) {
 		return ResourceKey.create(Registries.CONFIGURED_FEATURE, SpanishDelightRefabricated.id(id));
@@ -99,107 +88,51 @@ public class ModWorldgen {
 	}
 
 	public static void init() {
-		BiomeModifications.create(SpanishDelightRefabricated.id("spanish_delight_refabricated_wild_garlic_biome_modifications"))
-				.add(ModificationPhase.ADDITIONS, BiomeSelectors.tag(ModTags.Biomes.IS_PLAINS),
-						context -> context.getGenerationSettings()
-								.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WILD_GARLIC_PATCH_PLACED));
+		BiomeModifications.addFeature(new ModBiomeModifiers.FDBiomeSelector(ModTags.Biomes.IS_PLAINS),
+				GenerationStep.Decoration.VEGETAL_DECORATION, WILD_GARLIC_PLACED);
 
-		BiomeModifications.create(SpanishDelightRefabricated.id("spanish_delight_refabricated_wild_green_pepper_biome_modifications"))
-				.add(ModificationPhase.ADDITIONS, BiomeSelectors.tag(ModTags.Biomes.IS_TAIGA),
-						context -> context.getGenerationSettings()
-								.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WILD_GREEN_PEPPER_PATCH_PLACED));
+		BiomeModifications.addFeature(new ModBiomeModifiers.FDBiomeSelector(ModTags.Biomes.IS_TAIGA),
+				GenerationStep.Decoration.VEGETAL_DECORATION, WILD_GREEN_PEPPER_PLACED);
 
-		BiomeModifications.create(SpanishDelightRefabricated.id("spanish_delight_refabricated_wild_red_pepper_biome_modifications"))
-				.add(ModificationPhase.ADDITIONS, BiomeSelectors.tag(ModTags.Biomes.IS_SAVANNA),
-						context -> context.getGenerationSettings()
-								.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WILD_RED_PEPPER_PATCH_PLACED));
+		BiomeModifications.addFeature(new ModBiomeModifiers.FDBiomeSelector(ModTags.Biomes.IS_SAVANNA),
+				GenerationStep.Decoration.VEGETAL_DECORATION, WILD_RED_PEPPER_PLACED);
 	}
 
 	public static void bootstrapConfiguredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> context) {
-		HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
-
-		registerSimpleBlock(context, COARSE_DIRT_CONFIGURED, Blocks.COARSE_DIRT);
-		registerSimpleBlock(context, SHORT_GRASS_CONFIGURED, Blocks.SHORT_GRASS);
-		registerSimpleBlock(context, WILD_GARLIC_CONFIGURED, ModBlocks.WILD_GARLIC);
-		registerSimpleBlock(context, WILD_GREEN_PEPPER_CONFIGURED, ModBlocks.WILD_GREEN_PEPPER);
-		registerSimpleBlock(context, WILD_RED_PEPPER_CONFIGURED, ModBlocks.WILD_RED_PEPPER);
-
-		registerPatch(context, WILD_GARLIC_PATCH_CONFIGURED, placedFeatures, WILD_GARLIC_PLACED);
-		registerPatch(context, WILD_GREEN_PEPPER_PATCH_CONFIGURED, placedFeatures, WILD_GREEN_PEPPER_PLACED);
-		registerPatch(context, WILD_RED_PEPPER_PATCH_CONFIGURED, placedFeatures, WILD_RED_PEPPER_PLACED);
+		registerPatch(context, WILD_GARLIC_CONFIGURED, ModBlocks.WILD_GARLIC);
+		registerPatch(context, WILD_GREEN_PEPPER_CONFIGURED, ModBlocks.WILD_GREEN_PEPPER);
+		registerPatch(context, WILD_RED_PEPPER_CONFIGURED, ModBlocks.WILD_RED_PEPPER);
 	}
 
 	public static void bootstrapPlacedFeatures(BootstrapContext<PlacedFeature> context) {
-		HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-
-		PlacementUtils.register(context, COARSE_DIRT_PLACED, configuredFeatures.getOrThrow(COARSE_DIRT_CONFIGURED), coarseDirtPlacement());
-		PlacementUtils.register(context, SHORT_GRASS_PLACED, configuredFeatures.getOrThrow(SHORT_GRASS_CONFIGURED), List.of(
-				RandomOffsetPlacement.of(
-						TrapezoidInt.of(-6, 6, 0),
-						TrapezoidInt.of(-3, 3, 0)
-				),
-				BlockPredicateFilter.forPredicate(
-						BlockPredicate.allOf(
-								BlockPredicate.matchesBlocks(Blocks.AIR),
-								BlockPredicate.matchesTag(new Vec3i(0, -1, 0), BlockTags.DIRT)
-						)
-				)
-		));
+		HolderGetter<ConfiguredFeature<?, ?>> configured = context.lookup(Registries.CONFIGURED_FEATURE);
 
 		PlacementUtils.register(context, WILD_GARLIC_PLACED,
-				configuredFeatures.getOrThrow(WILD_GARLIC_CONFIGURED),
-				wildPatchPlacement()
+				configured.getOrThrow(WILD_GARLIC_CONFIGURED),
+				patchPlacement()
 		);
+
 		PlacementUtils.register(context, WILD_GREEN_PEPPER_PLACED,
-				configuredFeatures.getOrThrow(WILD_GREEN_PEPPER_CONFIGURED),
-				wildPatchPlacement()
+				configured.getOrThrow(WILD_GREEN_PEPPER_CONFIGURED),
+				patchPlacement()
 		);
+
 		PlacementUtils.register(context, WILD_RED_PEPPER_PLACED,
-				configuredFeatures.getOrThrow(WILD_RED_PEPPER_CONFIGURED),
-				wildPatchPlacement()
-		);
-
-		PlacementUtils.register(context, WILD_GARLIC_PATCH_PLACED, configuredFeatures.getOrThrow(WILD_GARLIC_PATCH_CONFIGURED), patchPlacement());
-		PlacementUtils.register(context, WILD_GREEN_PEPPER_PATCH_PLACED, configuredFeatures.getOrThrow(WILD_GREEN_PEPPER_PATCH_CONFIGURED), patchPlacement());
-		PlacementUtils.register(context, WILD_RED_PEPPER_PATCH_PLACED, configuredFeatures.getOrThrow(WILD_RED_PEPPER_PATCH_CONFIGURED), patchPlacement());
-	}
-
-	private static void registerSimpleBlock(
-			BootstrapContext<ConfiguredFeature<?, ?>> ctx,
-			ResourceKey<ConfiguredFeature<?, ?>> key,
-			Block block
-	) {
-		FeatureUtils.register(ctx, key, Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(block))
+				configured.getOrThrow(WILD_RED_PEPPER_CONFIGURED),
+				patchPlacement()
 		);
 	}
 
 	private static List<PlacementModifier> wildPatchPlacement() {
 		return List.of(
 				RandomOffsetPlacement.of(
-						TrapezoidInt.of(-6, 6, 0),
+						TrapezoidInt.of(-4, 4, 0),
 						TrapezoidInt.of(-3, 3, 0)
 				),
 				BlockPredicateFilter.forPredicate(
 						BlockPredicate.allOf(
 								BlockPredicate.matchesBlocks(Blocks.AIR),
 								BlockPredicate.matchesTag(new Vec3i(0, -1, 0), BlockTags.DIRT)
-						)
-				)
-		);
-	}
-
-	private static List<PlacementModifier> coarseDirtPlacement() {
-		return List.of(
-				RandomOffsetPlacement.of(ConstantInt.of(0), ConstantInt.of(1)),
-				RandomOffsetPlacement.of(
-						TrapezoidInt.of(-6, 6, 0),
-						TrapezoidInt.of(-3, 3, 0)
-				),
-				BlockPredicateFilter.forPredicate(
-						BlockPredicate.allOf(
-								BlockPredicate.replaceable(new Vec3i(0, 1, 0)),
-								BlockPredicate.matchesTag(BlockTags.DIRT)
 						)
 				)
 		);
@@ -207,7 +140,7 @@ public class ModWorldgen {
 
 	private static List<PlacementModifier> patchPlacement() {
 		return List.of(
-				RarityFilter.onAverageOnceEvery(120),
+				RarityFilter.onAverageOnceEvery(100),
 				InSquarePlacement.spread(),
 				CountPlacement.of(64),
 				PlacementUtils.HEIGHTMAP,
@@ -216,30 +149,38 @@ public class ModWorldgen {
 		);
 	}
 
-	private static InOrderFeatureConfiguration inOrder(
-			HolderGetter<PlacedFeature> placed,
-			ResourceKey<PlacedFeature> a,
-			ResourceKey<PlacedFeature> b,
-			ResourceKey<PlacedFeature> c
-	) {
-		return new InOrderFeatureConfiguration(
-				HolderSet.direct(
-						placed.getOrThrow(a),
-						placed.getOrThrow(b),
-						placed.getOrThrow(c)
-				)
-		);
-	}
-
 	private static void registerPatch(
 			BootstrapContext<ConfiguredFeature<?, ?>> ctx,
 			ResourceKey<ConfiguredFeature<?, ?>> key,
-			HolderGetter<PlacedFeature> placed,
-			ResourceKey<PlacedFeature> plant
+			Block plantBlock
 	) {
-		FeatureUtils.register(ctx, key,
-				ModBiomeFeatures.IN_ORDER.get(),
-				inOrder(placed, COARSE_DIRT_PLACED, plant, SHORT_GRASS_PLACED)
+		ctx.register(key,
+				new ConfiguredFeature<>(
+						ModBiomeFeatures.IN_ORDER.get(),
+						new InOrderFeatureConfiguration(
+								HolderSet.direct(
+										Holder.direct(new PlacedFeature(
+												Holder.direct(new ConfiguredFeature<>(
+														Feature.SIMPLE_BLOCK,
+														new SimpleBlockConfiguration(
+																BlockStateProvider.simple(plantBlock)
+														)
+												)),
+												wildPatchPlacement()
+										)),
+
+										Holder.direct(new PlacedFeature(
+												Holder.direct(new ConfiguredFeature<>(
+														Feature.SIMPLE_BLOCK,
+														new SimpleBlockConfiguration(
+																BlockStateProvider.simple(Blocks.SHORT_GRASS)
+														)
+												)),
+												wildPatchPlacement()
+										))
+								)
+						)
+				)
 		);
 	}
 }

@@ -22,7 +22,8 @@
 
 package com.macuguita.spanishdelight;
 
-import com.macuguita.spanishdelight.datagen.ModBlockTagProvider;
+import com.macuguita.spanishdelight.datagen.provider.ModBiomeTagProvider;
+import com.macuguita.spanishdelight.datagen.provider.ModBlockTagProvider;
 import com.macuguita.spanishdelight.datagen.ModVillagerTrades;
 import com.macuguita.spanishdelight.datagen.provider.ModItemTagProvider;
 import com.macuguita.spanishdelight.datagen.provider.ModLootTableProvider;
@@ -51,8 +52,9 @@ public class SpanishDelightRefabricatedDataGenerator implements DataGeneratorEnt
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-		pack.addProvider(ModItemTagProvider::new);
+		pack.addProvider(ModBiomeTagProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
@@ -67,7 +69,7 @@ public class SpanishDelightRefabricatedDataGenerator implements DataGeneratorEnt
 		registryBuilder.add(Registries.PLACED_FEATURE, ModWorldgen::bootstrapPlacedFeatures);
 	}
 
-	class ModDynamicRegistryProvider extends FabricDynamicRegistryProvider {
+	static class ModDynamicRegistryProvider extends FabricDynamicRegistryProvider {
 
 		public ModDynamicRegistryProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
 			super(output, registriesFuture);
