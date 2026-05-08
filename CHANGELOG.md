@@ -1,2 +1,2 @@
-- Updated to 26.1 \
--# some things with worldgen on base farmer's delight are broken, so they are broken here too
+- Updated to be compatible with latest version of farmers delight refabricated
+- Hopefully villagers should replant green beans now
