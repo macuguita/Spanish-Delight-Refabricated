@@ -39,16 +39,16 @@ public class ModConsumableComponents {
 			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(SHORT_DURATION)))
 			.build();
 	public static final Consumable CHURRO = Consumables.defaultFood()
-			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.comfort(SHORT_DURATION)))
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(SHORT_DURATION)))
 			.build();
 	public static final Consumable GAZPACHO = Consumables.defaultFood()
 			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(SHORT_DURATION)))
 			.build();
 	public static final Consumable FRIED_SQUID_RING = Consumables.defaultFood()
-			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.comfort(SHORT_DURATION)))
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(SHORT_DURATION)))
 			.build();
 	public static final Consumable BRAVA_POTATOES = Consumables.defaultFood()
-			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.comfort(MEDIUM_DURATION)))
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(MEDIUM_DURATION)))
 			.build();
 	public static final Consumable PANTUMACA = Consumables.defaultFood()
 			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(MEDIUM_DURATION)))
@@ -57,9 +57,9 @@ public class ModConsumableComponents {
 			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(LONG_DURATION)))
 			.build();
 	public static final Consumable PAELLA = Consumables.defaultFood()
-			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.comfort(LONG_DURATION)))
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(LONG_DURATION)))
 			.build();
 	public static final Consumable PIL_PIL_COD = Consumables.defaultFood()
-			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.comfort(LONG_DURATION)))
+			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(LONG_DURATION)))
 			.build();
 }

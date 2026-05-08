@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/brava_potatoes"
+        "recipe": "spanishdelight:brava_potatoes_from_pot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/brava_potatoes"
+      "spanishdelight:brava_potatoes_from_pot"
     ]
   }
 }

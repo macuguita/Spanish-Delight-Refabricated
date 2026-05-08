@@ -1,41 +1,27 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cod": {
+    "has_egg": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:cod"
+            "items": "minecraft:egg"
+          },
+          {
+            "items": "minecraft:brown_egg"
+          },
+          {
+            "items": "minecraft:blue_egg"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_garlic": {
+    "has_sugar": {
       "conditions": {
         "items": [
           {
-            "items": "spanishdelight:garlic"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_green_pepper": {
-      "conditions": {
-        "items": [
-          {
-            "items": "spanishdelight:green_pepper"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_sliced_potato": {
-      "conditions": {
-        "items": [
-          {
-            "items": "spanishdelight:sliced_potato"
+            "items": "minecraft:sugar"
           }
         ]
       },
@@ -43,23 +29,43 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/pil_pil_cod"
+        "recipe": "spanishdelight:churro_from_pot"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_water_bucket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:water_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wheat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:wheat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_green_pepper",
-      "has_cod",
-      "has_sliced_potato",
-      "has_garlic"
+      "has_wheat",
+      "has_egg",
+      "has_sugar",
+      "has_water_bucket"
     ]
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/pil_pil_cod"
+      "spanishdelight:churro_from_pot"
     ]
   }
 }

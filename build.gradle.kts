@@ -41,14 +41,15 @@ base {
 }
 
 repositories {
-    maven {
-        name = "Greenhouse Maven"
-        url = uri("https://maven.greenhouse.lgbt/releases/")
-    }
-    maven {
-        name = "Greenhouse Maven"
-        url = uri("https://maven.greenhouse.lgbt/snapshots/") // Porting Lib Hotfixes
-    }
+    flatDir { dirs("libs") }
+//    maven {
+//        name = "Greenhouse Maven"
+//        url = uri("https://maven.greenhouse.lgbt/releases/")
+//    }
+//    maven {
+//        name = "Greenhouse Maven"
+//        url = uri("https://maven.greenhouse.lgbt/snapshots/") // Porting Lib Hotfixes
+//    }
     maven {
         name = "Porting Lib Betas"
         url = uri("https://mvn.devos.one/snapshots/")

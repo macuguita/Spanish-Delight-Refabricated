@@ -42,7 +42,7 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
 	@Override
 	protected void addTags(HolderLookup.Provider wrapperLookup) {
-		valueLookupBuilder(ModTags.WILD_CROPS)
+		valueLookupBuilder(ModTags.Blocks.WILD_CROPS)
 				.add(ModBlocks.WILD_GARLIC)
 				.add(ModBlocks.WILD_GREEN_PEPPER)
 				.add(ModBlocks.WILD_RED_PEPPER);

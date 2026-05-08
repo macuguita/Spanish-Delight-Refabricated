@@ -27,6 +27,9 @@ import java.util.concurrent.CompletableFuture;
 import com.macuguita.spanishdelight.block.ModBlocks;
 import com.macuguita.spanishdelight.item.ModItems;
 import com.macuguita.spanishdelight.utils.ModTags;
+
+import net.minecraft.tags.ItemTags;
+
 import vectorwing.farmersdelight.common.tag.CommonTags;
 
 import net.minecraft.core.HolderLookup;
@@ -43,16 +46,16 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
 	@Override
 	protected void addTags(HolderLookup.Provider wrapperLookup) {
-		valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.WILD_CROPS_ITEM)
+		valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.Items.WILD_CROPS)
 				.add(ModBlocks.WILD_GARLIC.asItem())
 				.add(ModBlocks.WILD_GREEN_PEPPER.asItem())
 				.add(ModBlocks.WILD_RED_PEPPER.asItem());
-		valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.MEALS)
+		valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.Items.MEALS)
 				.add(ModItems.PAELLA)
 				.add(ModItems.PIL_PIL_COD)
 				.add(ModItems.BRAVA_POTATOES)
 				.add(ModItems.GAZPACHO);
-		valueLookupBuilder(CommonTags.CROPS_ONION)
+		valueLookupBuilder(CommonTags.Items.CROPS_ONION)
 				.add(ModItems.SLICED_ONION);
 		valueLookupBuilder(ConventionalItemTags.POTATO_CROPS)
 				.add(ModItems.SLICED_POTATO);
@@ -60,5 +63,7 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 				.add(ModItems.PANTUMACA);
 		valueLookupBuilder(ModTags.Items.GARLIC)
 				.add(ModItems.GARLIC);
+		valueLookupBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS)
+				.add(ModItems.GREEN_BEAN);
 	}
 }

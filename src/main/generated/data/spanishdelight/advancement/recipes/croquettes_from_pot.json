@@ -29,7 +29,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/croquettes"
+        "recipe": "spanishdelight:croquettes_from_pot"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -65,7 +65,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/croquettes"
+      "spanishdelight:croquettes_from_pot"
     ]
   }
 }

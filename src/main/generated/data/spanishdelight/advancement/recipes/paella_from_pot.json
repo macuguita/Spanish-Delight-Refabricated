@@ -63,7 +63,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/paella"
+        "recipe": "spanishdelight:paella_from_pot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -81,7 +81,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/paella"
+      "spanishdelight:paella_from_pot"
     ]
   }
 }

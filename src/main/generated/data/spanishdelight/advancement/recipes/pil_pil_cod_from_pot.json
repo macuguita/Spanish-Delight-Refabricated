@@ -1,27 +1,31 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_egg": {
+    "has_cod": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:egg"
-          },
-          {
-            "items": "minecraft:brown_egg"
-          },
-          {
-            "items": "minecraft:blue_egg"
+            "items": "minecraft:cod"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_sliced_onion": {
+    "has_garlic": {
       "conditions": {
         "items": [
           {
-            "items": "spanishdelight:sliced_onion"
+            "items": "spanishdelight:garlic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_green_pepper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spanishdelight:green_pepper"
           }
         ]
       },
@@ -39,7 +43,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/spanish_tortilla"
+        "recipe": "spanishdelight:pil_pil_cod_from_pot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -47,14 +51,15 @@
   "requirements": [
     [
       "has_the_recipe",
+      "has_green_pepper",
+      "has_cod",
       "has_sliced_potato",
-      "has_sliced_onion",
-      "has_egg"
+      "has_garlic"
     ]
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/spanish_tortilla"
+      "spanishdelight:pil_pil_cod_from_pot"
     ]
   }
 }

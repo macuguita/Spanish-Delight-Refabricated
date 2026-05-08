@@ -73,7 +73,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			@Override
 			public void buildRecipes() {
 				ShapelessRecipeBuilder.shapeless(BuiltInRegistries.ITEM, RecipeCategory.FOOD, ModItems.GAZPACHO)
-						.requires(Ingredient.of(itemLookup.getOrThrow(CommonTags.CROPS_TOMATO)))
+						.requires(Ingredient.of(itemLookup.getOrThrow(CommonTags.Items.CROPS_TOMATO)))
 						.requires(Ingredient.of(itemLookup.getOrThrow(ModTags.Items.GARLIC)))
 						.requires(Ingredient.of(itemLookup.getOrThrow(ConventionalItemTags.WATER_BUCKETS)))
 						.requires(Ingredient.of(itemLookup.getOrThrow(ConventionalItemTags.BREAD_FOODS)))
@@ -82,7 +82,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.unlockedBy(getHasName(ModItems.GARLIC), has(ModItems.GARLIC))
 						.save(recipeExporter);
 				ShapelessRecipeBuilder.shapeless(BuiltInRegistries.ITEM, RecipeCategory.FOOD, ModItems.PANTUMACA)
-						.requires(Ingredient.of(itemLookup.getOrThrow(CommonTags.CROPS_TOMATO)))
+						.requires(Ingredient.of(itemLookup.getOrThrow(CommonTags.Items.CROPS_TOMATO)))
 						.requires(Ingredient.of(itemLookup.getOrThrow(ConventionalItemTags.BREAD_FOODS)))
 						.unlockedBy(getHasName(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()), has(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()))
 						.unlockedBy(getHasName(Items.BREAD), has(Items.BREAD))
@@ -104,7 +104,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.addIngredient(ModItems.PAPRIKA)
 						.unlockedByItems(getHasName(ModItems.SLICED_POTATO), ModItems.SLICED_POTATO)
 						.setRecipeBookCategory(CookingPotBookCategory.MEALS)
-						.build(recipeExporter);
+						.build(recipeExporter, ModItems.BRAVA_POTATOES + "_from_pot");
 
 				CookingPotRecipeBuilder.cookingPotRecipe(BuiltInRegistries.ITEM, ModItems.CHURRO, 3, NORMAL_COOKING, MEDIUM_EXP)
 						.addIngredient(Ingredient.of(itemLookup.getOrThrow(ConventionalItemTags.WHEAT_CROPS)))
@@ -122,7 +122,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.unlockedByItems(getHasName(Items.SUGAR), Items.SUGAR)
 						.unlockedByItems(getHasName(Items.WATER_BUCKET), Items.WATER_BUCKET)
 						.setRecipeBookCategory(CookingPotBookCategory.MISC)
-						.build(recipeExporter);
+						.build(recipeExporter, ModItems.CHURRO + "_from_pot");
 
 				CookingPotRecipeBuilder.cookingPotRecipe(BuiltInRegistries.ITEM, ModItems.CROQUETTES, 1, NORMAL_COOKING, MEDIUM_EXP)
 						.addIngredient(vectorwing.farmersdelight.common.registry.ModItems.HAM.get())
@@ -141,12 +141,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.unlockedByItems(getHasName(Items.EGG), Items.EGG, Items.BROWN_EGG, Items.BLUE_EGG)
 						.unlockedByItems(getHasName(Items.BREAD), Items.BREAD)
 						.setRecipeBookCategory(CookingPotBookCategory.MISC)
-						.build(recipeExporter);
+						.build(recipeExporter, ModItems.CROQUETTES + "_from_pot");
 
 				CookingPotRecipeBuilder.cookingPotRecipe(BuiltInRegistries.ITEM, ModItems.PAELLA, 1, SLOW_COOKING, LARGE_EXP, Items.BOWL)
 						.addIngredient(Items.RABBIT)
 						.addIngredient(vectorwing.farmersdelight.common.registry.ModItems.CHICKEN_CUTS.get())
-						.addIngredient(Ingredient.of(itemLookup.getOrThrow(CommonTags.CROPS_RICE)))
+						.addIngredient(Ingredient.of(itemLookup.getOrThrow(CommonTags.Items.CROPS_RICE)))
 						.addIngredient(ModItems.PAPRIKA)
 						.addIngredient(ModItems.GREEN_BEAN)
 						.addIngredient(Ingredient.of(itemLookup.getOrThrow(ModTags.Items.GARLIC)))
@@ -157,7 +157,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.unlockedByItems(getHasName(ModItems.GREEN_BEAN), ModItems.GREEN_BEAN)
 						.unlockedByItems(getHasName(ModItems.GARLIC), ModItems.GARLIC)
 						.setRecipeBookCategory(CookingPotBookCategory.MEALS)
-						.build(recipeExporter);
+						.build(recipeExporter, ModItems.PAELLA + "_from_pot");
 
 				CookingPotRecipeBuilder.cookingPotRecipe(BuiltInRegistries.ITEM, ModItems.PIL_PIL_COD, 1, SLOW_COOKING, LARGE_EXP, Items.BOWL)
 						.addIngredient(ModItems.GREEN_PEPPER)
@@ -169,7 +169,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.unlockedByItems(getHasName(ModItems.SLICED_POTATO), ModItems.SLICED_POTATO)
 						.unlockedByItems(getHasName(ModItems.GARLIC), ModItems.GARLIC)
 						.setRecipeBookCategory(CookingPotBookCategory.MEALS)
-						.build(recipeExporter);
+						.build(recipeExporter, ModItems.PIL_PIL_COD + "_from_pot");
 
 				CookingPotRecipeBuilder.cookingPotRecipe(BuiltInRegistries.ITEM, ModItems.SPANISH_TORTILLA, 1, NORMAL_COOKING, LARGE_EXP)
 						.addIngredient(ModItems.SLICED_POTATO)
@@ -182,14 +182,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.unlockedByItems(getHasName(ModItems.SLICED_ONION), ModItems.SLICED_ONION)
 						.unlockedByItems(getHasName(Items.EGG), Items.EGG, Items.BROWN_EGG, Items.BLUE_EGG)
 						.setRecipeBookCategory(CookingPotBookCategory.MEALS)
-						.build(recipeExporter);
+						.build(recipeExporter, ModItems.SPANISH_TORTILLA + "_from_pot");
 
-				CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.ONION.get()), Ingredient.of(itemLookup.getOrThrow(CommonTags.TOOLS_KNIFE)), ModItems.SLICED_ONION, 3)
-						.build(recipeExporter);
-				CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(itemLookup.getOrThrow(CommonTags.TOOLS_KNIFE)), ModItems.SLICED_POTATO, 3)
-						.build(recipeExporter);
-				CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.RED_PEPPER), Ingredient.of(itemLookup.getOrThrow(CommonTags.TOOLS_KNIFE)), ModItems.PAPRIKA, 3)
-						.build(recipeExporter);
+				CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.ONION.get()), Ingredient.of(itemLookup.getOrThrow(CommonTags.Items.TOOLS_KNIFE)), ModItems.SLICED_ONION, 3)
+						.build(recipeExporter, ModItems.SLICED_ONION + "_from_board");
+				CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(itemLookup.getOrThrow(CommonTags.Items.TOOLS_KNIFE)), ModItems.SLICED_POTATO, 3)
+						.build(recipeExporter, ModItems.SLICED_POTATO + "_from_board");
+				CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.RED_PEPPER), Ingredient.of(itemLookup.getOrThrow(CommonTags.Items.TOOLS_KNIFE)), ModItems.PAPRIKA, 3)
+						.build(recipeExporter, ModItems.PAPRIKA + "_from_board");
 			}
 		};
 	}
