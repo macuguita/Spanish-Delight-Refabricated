@@ -1,2 +1,1 @@
-- Updated to be compatible with latest version of farmers delight refabricated
-- Hopefully villagers should replant green beans now
+- Updated to 26.2 and done some internal refactoring

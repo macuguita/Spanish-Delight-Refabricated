@@ -5,7 +5,7 @@ object BuildConfig {
     val parchmentMappings: String? = null
     val loaderVersion: String = "0.19.3"
 
-    val modVersion: String = minecraftVersion + "-1.0.10"
+    val modVersion: String = minecraftVersion + "-1.0.11"
     val mavenGroup: String = "com.macuguita"
     val modId: String = "spanishdelight"
     val modName: String = "Spanish Delight Refabricated"
