@@ -24,12 +24,12 @@ package com.macuguita.spanishdelight.datagen.provider;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.macuguita.spanishdelight.block.ModBlocks;
-import com.macuguita.spanishdelight.item.ModItems;
+import com.macuguita.spanishdelight.reg.SDBlocks;
+import com.macuguita.spanishdelight.reg.SDItems;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 
-import net.minecraft.advancements.criterion.StatePropertiesPredicate;
+import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
@@ -48,9 +48,9 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 
-public class ModLootTableProvider extends FabricBlockLootSubProvider {
+public class SDLootTableProvider extends FabricBlockLootSubProvider {
 
-	public ModLootTableProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+	public SDLootTableProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
 		super(dataOutput, registryLookup);
 	}
 
@@ -58,22 +58,22 @@ public class ModLootTableProvider extends FabricBlockLootSubProvider {
 	public void generate() {
 		HolderLookup.RegistryLookup<Enchantment> impl = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
 		HolderLookup.RegistryLookup<Item> impl2 = this.registries.lookupOrThrow(Registries.ITEM);
-		add(ModBlocks.WILD_GARLIC, block -> wildCropDrops(block, ModItems.GARLIC, impl));
-		add(ModBlocks.WILD_RED_PEPPER, block -> wildCropDrops(block, ModItems.RED_PEPPER, impl));
-		add(ModBlocks.WILD_GREEN_PEPPER, block -> wildCropDrops(block, ModItems.GREEN_PEPPER, impl));
+		add(SDBlocks.WILD_GARLIC, block -> wildCropDrops(block, SDItems.GARLIC, impl));
+		add(SDBlocks.WILD_RED_PEPPER, block -> wildCropDrops(block, SDItems.RED_PEPPER, impl));
+		add(SDBlocks.WILD_GREEN_PEPPER, block -> wildCropDrops(block, SDItems.GREEN_PEPPER, impl));
 
-		LootItemCondition.Builder builder5 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GREEN_BEAN_CROP)
+		LootItemCondition.Builder builder5 = LootItemBlockStatePropertyCondition.hasBlockStateProperties(SDBlocks.GREEN_BEAN_CROP)
 				.setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PotatoBlock.AGE, 5));
 		this.add(
-				ModBlocks.GREEN_BEAN_CROP,
+				SDBlocks.GREEN_BEAN_CROP,
 				this.applyExplosionDecay(
-						ModBlocks.GREEN_BEAN_CROP,
+						SDBlocks.GREEN_BEAN_CROP,
 						LootTable.lootTable()
-								.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.GREEN_BEAN)))
+								.withPool(LootPool.lootPool().add(LootItem.lootTableItem(SDItems.GREEN_BEAN)))
 								.withPool(
 										LootPool.lootPool()
 												.when(builder5)
-												.add(LootItem.lootTableItem(ModItems.GREEN_BEAN).apply(ApplyBonusCount.addBonusBinomialDistributionCount(impl.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 3)))
+												.add(LootItem.lootTableItem(SDItems.GREEN_BEAN).apply(ApplyBonusCount.addBonusBinomialDistributionCount(impl.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 3)))
 								)
 				)
 		);

@@ -20,10 +20,10 @@
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.macuguita.spanishdelight.block.custom;
+package com.macuguita.spanishdelight.block;
 
 import com.mojang.serialization.MapCodec;
-import com.macuguita.spanishdelight.item.ModItems;
+import com.macuguita.spanishdelight.reg.SDItems;
 
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -51,7 +51,7 @@ public class GreenBeanCropBlock extends CropBlock {
 
 	@Override
 	protected ItemLike getBaseSeedId() {
-		return ModItems.GREEN_BEAN;
+		return SDItems.GREEN_BEAN;
 	}
 
 	@Override

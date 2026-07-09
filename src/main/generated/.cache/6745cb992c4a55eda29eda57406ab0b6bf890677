@@ -1,0 +1,5 @@
+// 26.2	-999999999-01-01T00:00:00	Spanish Delight Refabricated/Block Loot Tables
+d0e27988c04fb33c655c9f18dc9fb7631d740267 data/spanishdelight/loot_table/blocks/green_bean_crop.json
+2e9edd11245342a38c19f4b8f4a1ec2f0e51d391 data/spanishdelight/loot_table/blocks/wild_garlic.json
+2be7e275f2864af25c66cef8bbcb9dc67b372991 data/spanishdelight/loot_table/blocks/wild_green_pepper.json
+30189860e04e314ae9210d6402b985997a0f3b36 data/spanishdelight/loot_table/blocks/wild_red_pepper.json

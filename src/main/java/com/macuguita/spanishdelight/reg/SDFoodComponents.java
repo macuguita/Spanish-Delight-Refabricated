@@ -20,11 +20,11 @@
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.macuguita.spanishdelight.item;
+package com.macuguita.spanishdelight.reg;
 
 import net.minecraft.world.food.FoodProperties;
 
-public class ModFoodComponents {
+public final class SDFoodComponents {
 
 	public static final FoodProperties SLICED_POTATO = new FoodProperties.Builder().nutrition(1).saturationModifier(0.5f).build();
 	public static final FoodProperties SLICED_ONION = new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f).build();
@@ -51,4 +51,6 @@ public class ModFoodComponents {
 			.nutrition(6).saturationModifier(0.7f).build();
 	public static final FoodProperties FRIED_SQUID_RING = new FoodProperties.Builder()
 			.nutrition(6).saturationModifier(0.5f).build();
+
+	private SDFoodComponents() {}
 }

@@ -25,8 +25,8 @@ package com.macuguita.spanishdelight.worldgen;
 import java.util.List;
 
 import com.macuguita.spanishdelight.SpanishDelightRefabricated;
-import com.macuguita.spanishdelight.block.ModBlocks;
-import com.macuguita.spanishdelight.utils.ModTags;
+import com.macuguita.spanishdelight.reg.SDBlocks;
+import com.macuguita.spanishdelight.utils.SDTags;
 
 import net.minecraft.core.Holder;
 import net.minecraft.tags.BiomeTags;
@@ -41,11 +41,9 @@ import net.minecraft.core.HolderSet;
 import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.TrapezoidInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -64,12 +62,10 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 
 import vectorwing.farmersdelight.common.world.filter.BiomeTagFilter;
 
-public class ModWorldgen {
+public class SDWorldgen {
 
 	public static final ResourceKey<ConfiguredFeature<?, ?>> WILD_GARLIC_CONFIGURED = registerConfiguredFeature("wild_garlic");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> WILD_RED_PEPPER_CONFIGURED = registerConfiguredFeature("wild_red_pepper");
@@ -88,20 +84,20 @@ public class ModWorldgen {
 	}
 
 	public static void init() {
-		BiomeModifications.addFeature(new ModBiomeModifiers.FDBiomeSelector(ModTags.Biomes.IS_PLAINS),
+		BiomeModifications.addFeature(new ModBiomeModifiers.FDBiomeSelector(SDTags.Biomes.IS_PLAINS),
 				GenerationStep.Decoration.VEGETAL_DECORATION, WILD_GARLIC_PLACED);
 
-		BiomeModifications.addFeature(new ModBiomeModifiers.FDBiomeSelector(ModTags.Biomes.IS_TAIGA),
+		BiomeModifications.addFeature(new ModBiomeModifiers.FDBiomeSelector(SDTags.Biomes.IS_TAIGA),
 				GenerationStep.Decoration.VEGETAL_DECORATION, WILD_GREEN_PEPPER_PLACED);
 
-		BiomeModifications.addFeature(new ModBiomeModifiers.FDBiomeSelector(ModTags.Biomes.IS_SAVANNA),
+		BiomeModifications.addFeature(new ModBiomeModifiers.FDBiomeSelector(SDTags.Biomes.IS_SAVANNA),
 				GenerationStep.Decoration.VEGETAL_DECORATION, WILD_RED_PEPPER_PLACED);
 	}
 
 	public static void bootstrapConfiguredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> context) {
-		registerPatch(context, WILD_GARLIC_CONFIGURED, ModBlocks.WILD_GARLIC);
-		registerPatch(context, WILD_GREEN_PEPPER_CONFIGURED, ModBlocks.WILD_GREEN_PEPPER);
-		registerPatch(context, WILD_RED_PEPPER_CONFIGURED, ModBlocks.WILD_RED_PEPPER);
+		registerPatch(context, WILD_GARLIC_CONFIGURED, SDBlocks.WILD_GARLIC);
+		registerPatch(context, WILD_GREEN_PEPPER_CONFIGURED, SDBlocks.WILD_GREEN_PEPPER);
+		registerPatch(context, WILD_RED_PEPPER_CONFIGURED, SDBlocks.WILD_RED_PEPPER);
 	}
 
 	public static void bootstrapPlacedFeatures(BootstrapContext<PlacedFeature> context) {

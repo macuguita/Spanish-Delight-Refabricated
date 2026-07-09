@@ -20,7 +20,31 @@
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-@NullMarked
-package com.macuguita.spanishdelight.block.custom;
+package com.macuguita.spanishdelight.datagen.provider;
 
-import org.jspecify.annotations.NullMarked;
+import java.util.concurrent.CompletableFuture;
+
+import com.macuguita.spanishdelight.reg.id.SDBlockItemIds;
+
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
+
+import vectorwing.farmersdelight.common.tag.ModTags;
+
+import net.minecraft.core.HolderLookup;
+
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+
+public class SDBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
+
+	public SDBlockTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+		super(output, registriesFuture);
+	}
+
+	@Override
+	protected void addTags(HolderLookup.Provider wrapperLookup) {
+		tag(ModTags.Blocks.WILD_CROPS)
+				.add(SDBlockItemIds.WILD_GARLIC.block())
+				.add(SDBlockItemIds.WILD_GREEN_PEPPER.block())
+				.add(SDBlockItemIds.WILD_RED_PEPPER.block());
+	}
+}

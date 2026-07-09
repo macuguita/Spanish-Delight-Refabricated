@@ -22,17 +22,17 @@
 
 package com.macuguita.spanishdelight;
 
-import com.macuguita.spanishdelight.datagen.provider.ModBiomeTagProvider;
-import com.macuguita.spanishdelight.datagen.provider.ModBlockTagProvider;
-import com.macuguita.spanishdelight.datagen.ModVillagerTrades;
-import com.macuguita.spanishdelight.datagen.provider.ModItemTagProvider;
-import com.macuguita.spanishdelight.datagen.provider.ModLootTableProvider;
-import com.macuguita.spanishdelight.datagen.provider.ModModelProvider;
-import com.macuguita.spanishdelight.datagen.provider.ModRecipeProvider;
+import com.macuguita.spanishdelight.datagen.provider.SDBiomeTagProvider;
+import com.macuguita.spanishdelight.datagen.provider.SDBlockTagProvider;
+import com.macuguita.spanishdelight.datagen.SDVillagerTrades;
+import com.macuguita.spanishdelight.datagen.provider.SDItemTagProvider;
+import com.macuguita.spanishdelight.datagen.provider.SDLootTableProvider;
+import com.macuguita.spanishdelight.datagen.provider.SDModelProvider;
+import com.macuguita.spanishdelight.datagen.provider.SDRecipeProvider;
 
-import com.macuguita.spanishdelight.datagen.provider.ModVillagerTradesTagsProvider;
+import com.macuguita.spanishdelight.datagen.provider.SDVillagerTradesTagsProvider;
 
-import com.macuguita.spanishdelight.worldgen.ModWorldgen;
+import com.macuguita.spanishdelight.worldgen.SDWorldgen;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -52,21 +52,21 @@ public class SpanishDelightRefabricatedDataGenerator implements DataGeneratorEnt
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-		pack.addProvider(ModBiomeTagProvider::new);
-		pack.addProvider(ModBlockTagProvider::new);
-		pack.addProvider(ModItemTagProvider::new);
-		pack.addProvider(ModLootTableProvider::new);
-		pack.addProvider(ModModelProvider::new);
-		pack.addProvider(ModRecipeProvider::new);
-		pack.addProvider(ModVillagerTradesTagsProvider::new);
+		pack.addProvider(SDBiomeTagProvider::new);
+		pack.addProvider(SDBlockTagProvider::new);
+		pack.addProvider(SDItemTagProvider::new);
+		pack.addProvider(SDLootTableProvider::new);
+		pack.addProvider(SDModelProvider::new);
+		pack.addProvider(SDRecipeProvider::new);
+		pack.addProvider(SDVillagerTradesTagsProvider::new);
 		pack.addProvider(ModDynamicRegistryProvider::new);
 	}
 
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
-		registryBuilder.add(Registries.VILLAGER_TRADE, ModVillagerTrades::bootstrap);
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, ModWorldgen::bootstrapConfiguredFeatures);
-		registryBuilder.add(Registries.PLACED_FEATURE, ModWorldgen::bootstrapPlacedFeatures);
+		registryBuilder.add(Registries.VILLAGER_TRADE, SDVillagerTrades::bootstrap);
+		registryBuilder.add(Registries.CONFIGURED_FEATURE, SDWorldgen::bootstrapConfiguredFeatures);
+		registryBuilder.add(Registries.PLACED_FEATURE, SDWorldgen::bootstrapPlacedFeatures);
 	}
 
 	static class ModDynamicRegistryProvider extends FabricDynamicRegistryProvider {

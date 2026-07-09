@@ -24,9 +24,9 @@ package com.macuguita.spanishdelight.datagen.provider;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.macuguita.spanishdelight.block.ModBlocks;
-import com.macuguita.spanishdelight.item.ModItems;
-import com.macuguita.spanishdelight.utils.ModTags;
+import com.macuguita.spanishdelight.reg.id.SDBlockItemIds;
+import com.macuguita.spanishdelight.reg.id.SDItemIds;
+import com.macuguita.spanishdelight.utils.SDTags;
 
 import net.minecraft.tags.ItemTags;
 
@@ -38,32 +38,32 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 
-public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
+public class SDItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
-	public ModItemTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
+	public SDItemTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
 		super(output, completableFuture);
 	}
 
 	@Override
 	protected void addTags(HolderLookup.Provider wrapperLookup) {
-		valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.Items.WILD_CROPS)
-				.add(ModBlocks.WILD_GARLIC.asItem())
-				.add(ModBlocks.WILD_GREEN_PEPPER.asItem())
-				.add(ModBlocks.WILD_RED_PEPPER.asItem());
-		valueLookupBuilder(vectorwing.farmersdelight.common.tag.ModTags.Items.MEALS)
-				.add(ModItems.PAELLA)
-				.add(ModItems.PIL_PIL_COD)
-				.add(ModItems.BRAVA_POTATOES)
-				.add(ModItems.GAZPACHO);
-		valueLookupBuilder(CommonTags.Items.CROPS_ONION)
-				.add(ModItems.SLICED_ONION);
-		valueLookupBuilder(ConventionalItemTags.POTATO_CROPS)
-				.add(ModItems.SLICED_POTATO);
-		valueLookupBuilder(ConventionalItemTags.BREAD_FOODS)
-				.add(ModItems.PANTUMACA);
-		valueLookupBuilder(ModTags.Items.GARLIC)
-				.add(ModItems.GARLIC);
-		valueLookupBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS)
-				.add(ModItems.GREEN_BEAN);
+		tag(vectorwing.farmersdelight.common.tag.ModTags.Items.WILD_CROPS)
+				.add(SDBlockItemIds.WILD_GARLIC.item())
+				.add(SDBlockItemIds.WILD_GREEN_PEPPER.item())
+				.add(SDBlockItemIds.WILD_RED_PEPPER.item());
+		tag(vectorwing.farmersdelight.common.tag.ModTags.Items.MEALS)
+				.add(SDItemIds.PAELLA)
+				.add(SDItemIds.PIL_PIL_COD)
+				.add(SDItemIds.BRAVA_POTATOES)
+				.add(SDItemIds.GAZPACHO);
+		tag(CommonTags.Items.CROPS_ONION)
+				.add(SDItemIds.SLICED_ONION);
+		tag(ConventionalItemTags.POTATO_CROPS)
+				.add(SDItemIds.SLICED_POTATO);
+		tag(ConventionalItemTags.BREAD_FOODS)
+				.add(SDItemIds.PANTUMACA);
+		tag(SDTags.Items.GARLIC)
+				.add(SDItemIds.GARLIC);
+		tag(ItemTags.VILLAGER_PLANTABLE_SEEDS)
+				.add(SDBlockItemIds.GREEN_BEAN.item());
 	}
 }

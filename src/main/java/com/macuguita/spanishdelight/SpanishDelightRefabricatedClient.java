@@ -23,7 +23,7 @@
 package com.macuguita.spanishdelight;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import com.macuguita.spanishdelight.item.ModItems;
+import com.macuguita.spanishdelight.reg.SDItems;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -37,14 +37,14 @@ public class SpanishDelightRefabricatedClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, list) -> {
-			if (itemStack.is(ModItems.SQUID_RING)) {
+			if (itemStack.is(SDItems.SQUID_RING)) {
 				if (InputConstants.isKeyDown(Minecraft.getInstance().getWindow(), InputConstants.KEY_LSHIFT)) {
 					list.add(Component.translatable("tooltip.spanishdelight.squid_ring"));
 				} else {
 					list.add(Component.translatable("tooltip.spanishdelight.press_shift").withStyle(ChatFormatting.YELLOW));
 				}
 			}
-			if (itemStack.is(ModItems.GREEN_BEAN)) {
+			if (itemStack.is(SDItems.GREEN_BEAN)) {
 				if (InputConstants.isKeyDown(Minecraft.getInstance().getWindow(), InputConstants.KEY_LSHIFT)) {
 					list.add(Component.translatable("tooltip.spanishdelight.green_bean"));
 				} else {

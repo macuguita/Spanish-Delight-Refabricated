@@ -1,7 +1,7 @@
 plugins {
     id("net.fabricmc.fabric-loom").version("1.16-SNAPSHOT")
     id("maven-publish")
-    id("me.modmuss50.mod-publish-plugin").version("1.0.0")
+    id("me.modmuss50.mod-publish-plugin").version("2.0.1")
     id("co.uzzu.dotenv.gradle") version "4.0.0"
 }
 
@@ -42,10 +42,10 @@ base {
 
 repositories {
     flatDir { dirs("libs") }
-//    maven {
-//        name = "Greenhouse Maven"
-//        url = uri("https://maven.greenhouse.lgbt/releases/")
-//    }
+    maven {
+        name = "Greenhouse Maven"
+        url = uri("https://maven.greenhouse.lgbt/releases/")
+    }
 //    maven {
 //        name = "Greenhouse Maven"
 //        url = uri("https://maven.greenhouse.lgbt/snapshots/") // Porting Lib Hotfixes

@@ -22,7 +22,7 @@
 
 package com.macuguita.spanishdelight.datagen.provider;
 
-import com.macuguita.spanishdelight.utils.ModTags;
+import com.macuguita.spanishdelight.utils.SDTags;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
@@ -37,21 +37,21 @@ import net.minecraft.world.level.biome.Biomes;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
+public class SDBiomeTagProvider extends FabricTagsProvider<Biome> {
 
-	public ModBiomeTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+	public SDBiomeTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
 		super(output, Registries.BIOME, registryLookupFuture);
 	}
 
 	@Override
 	protected void addTags(HolderLookup.Provider registries) {
 
-		builder(ModTags.Biomes.IS_PLAINS)
+		builder(SDTags.Biomes.IS_PLAINS)
 				.add(Biomes.PLAINS)
 				.add(Biomes.SUNFLOWER_PLAINS)
 				.addOptionalTag(ConventionalBiomeTags.IS_PLAINS);
 
-		builder(ModTags.Biomes.IS_TAIGA)
+		builder(SDTags.Biomes.IS_TAIGA)
 				.add(Biomes.TAIGA)
 				.add(Biomes.SNOWY_TAIGA)
 				.add(Biomes.OLD_GROWTH_PINE_TAIGA)
@@ -59,7 +59,7 @@ public class ModBiomeTagProvider extends FabricTagsProvider<Biome> {
 				.addOptionalTag(BiomeTags.IS_TAIGA)
 				.addOptionalTag(ConventionalBiomeTags.IS_TAIGA);
 
-		builder(ModTags.Biomes.IS_SAVANNA)
+		builder(SDTags.Biomes.IS_SAVANNA)
 				.add(Biomes.SAVANNA)
 				.add(Biomes.SAVANNA_PLATEAU)
 				.add(Biomes.WINDSWEPT_SAVANNA)

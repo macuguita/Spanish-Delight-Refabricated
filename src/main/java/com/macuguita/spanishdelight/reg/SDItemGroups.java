@@ -20,10 +20,9 @@
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.macuguita.spanishdelight.item;
+package com.macuguita.spanishdelight.reg;
 
 import com.macuguita.spanishdelight.SpanishDelightRefabricated;
-import com.macuguita.spanishdelight.block.ModBlocks;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -34,33 +33,35 @@ import net.minecraft.world.item.ItemStack;
 
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 
-public class ModItemGroups {
+public final class SDItemGroups {
 
 	public static CreativeModeTab SDELIGHT_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
 			Identifier.fromNamespaceAndPath(SpanishDelightRefabricated.MOD_ID, "sdelight_tab"),
 			FabricCreativeModeTab.builder().title(Component.translatable("creativetab.sdelight_tab"))
-					.icon(() -> new ItemStack(ModItems.SPANISH_TORTILLA)).displayItems((displayContext, entries) -> {
-						entries.accept(ModItems.PAPRIKA);
-						entries.accept(ModItems.SLICED_POTATO);
-						entries.accept(ModItems.SLICED_ONION);
-						entries.accept(ModItems.GARLIC);
-						entries.accept(ModItems.GREEN_BEAN);
-						entries.accept(ModItems.RED_PEPPER);
-						entries.accept(ModItems.GREEN_PEPPER);
-						entries.accept(ModItems.SQUID_RING);
-						entries.accept(ModItems.SPANISH_TORTILLA);
-						entries.accept(ModItems.PAELLA);
-						entries.accept(ModItems.PIL_PIL_COD);
-						entries.accept(ModItems.CROQUETTES);
-						entries.accept(ModItems.BRAVA_POTATOES);
-						entries.accept(ModItems.CHURRO);
-						entries.accept(ModItems.GAZPACHO);
-						entries.accept(ModItems.PANTUMACA);
-						entries.accept(ModItems.FRIED_SQUID_RING);
-						entries.accept(ModBlocks.WILD_GARLIC.asItem());
-						entries.accept(ModBlocks.WILD_RED_PEPPER.asItem());
-						entries.accept(ModBlocks.WILD_GREEN_PEPPER.asItem());
+					.icon(() -> new ItemStack(SDItems.SPANISH_TORTILLA)).displayItems((displayContext, entries) -> {
+						entries.accept(SDItems.PAPRIKA);
+						entries.accept(SDItems.SLICED_POTATO);
+						entries.accept(SDItems.SLICED_ONION);
+						entries.accept(SDItems.GARLIC);
+						entries.accept(SDItems.GREEN_BEAN);
+						entries.accept(SDItems.RED_PEPPER);
+						entries.accept(SDItems.GREEN_PEPPER);
+						entries.accept(SDItems.SQUID_RING);
+						entries.accept(SDItems.SPANISH_TORTILLA);
+						entries.accept(SDItems.PAELLA);
+						entries.accept(SDItems.PIL_PIL_COD);
+						entries.accept(SDItems.CROQUETTES);
+						entries.accept(SDItems.BRAVA_POTATOES);
+						entries.accept(SDItems.CHURRO);
+						entries.accept(SDItems.GAZPACHO);
+						entries.accept(SDItems.PANTUMACA);
+						entries.accept(SDItems.FRIED_SQUID_RING);
+						entries.accept(SDItems.WILD_GARLIC);
+						entries.accept(SDItems.WILD_RED_PEPPER);
+						entries.accept(SDItems.WILD_GREEN_PEPPER);
 					}).build());
+
+	private SDItemGroups() {}
 
 	public static void registerItemGroups() {
 		SpanishDelightRefabricated.LOGGER.info("Registering Item Groups for" + SpanishDelightRefabricated.MOD_ID);

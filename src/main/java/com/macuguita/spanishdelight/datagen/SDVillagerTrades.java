@@ -26,9 +26,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.macuguita.spanishdelight.SpanishDelightRefabricated;
-import com.macuguita.spanishdelight.item.ModItems;
+import com.macuguita.spanishdelight.reg.SDItems;
 
-import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
@@ -38,7 +37,7 @@ import net.minecraft.world.item.trading.TradeCost;
 import net.minecraft.world.item.trading.VillagerTrade;
 import net.minecraft.world.item.trading.VillagerTrades;
 
-public class ModVillagerTrades {
+public class SDVillagerTrades {
 
 	public static final ResourceKey<VillagerTrade> FARMER_1_EMERALD_GREEN_BEAM = resourceKey("farmer/1/emerald_green_bean");
 
@@ -67,7 +66,7 @@ public class ModVillagerTrades {
 		VillagerTrades.register(context, FARMER_1_EMERALD_GREEN_BEAM,
 				new VillagerTrade(
 						new TradeCost(Items.EMERALD, 1),
-						new ItemStackTemplate(ModItems.GREEN_BEAN, 10),
+						new ItemStackTemplate(SDItems.GREEN_BEAN, 10),
 						10, 8, 0.02F, Optional.empty(), List.of()
 				)
 		);
@@ -76,15 +75,15 @@ public class ModVillagerTrades {
 		VillagerTrades.register(context, FARMER_2_TOMATO_GARLIC,
 				new VillagerTrade(
 						new TradeCost(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get(), 15),
-						new ItemStackTemplate(ModItems.GARLIC, 5),
+						new ItemStackTemplate(SDItems.GARLIC, 5),
 						8, 8, 0.02F, Optional.empty(), List.of()
 				)
 		);
 
 		VillagerTrades.register(context, FARMER_2_SLICED_POTATO_RED_PEPPER,
 				new VillagerTrade(
-						new TradeCost(ModItems.SLICED_POTATO, 24),
-						new ItemStackTemplate(ModItems.RED_PEPPER, 3),
+						new TradeCost(SDItems.SLICED_POTATO, 24),
+						new ItemStackTemplate(SDItems.RED_PEPPER, 3),
 						8, 8, 0.02F, Optional.empty(), List.of()
 				)
 		);
@@ -92,7 +91,7 @@ public class ModVillagerTrades {
 		VillagerTrades.register(context, FARMER_2_RICE_GREEN_PEPPER,
 				new VillagerTrade(
 						new TradeCost(vectorwing.farmersdelight.common.registry.ModItems.RICE.get(), 27),
-						new ItemStackTemplate(ModItems.GREEN_PEPPER, 9),
+						new ItemStackTemplate(SDItems.GREEN_PEPPER, 9),
 						8, 8, 0.02F, Optional.empty(), List.of()
 				)
 		);
@@ -100,24 +99,24 @@ public class ModVillagerTrades {
 		// FARMER 3
 		VillagerTrades.register(context, FARMER_3_GAZPACHO_GARLIC,
 				new VillagerTrade(
-						new TradeCost(ModItems.GAZPACHO, 1),
-						new ItemStackTemplate(ModItems.GARLIC, 20),
+						new TradeCost(SDItems.GAZPACHO, 1),
+						new ItemStackTemplate(SDItems.GARLIC, 20),
 						10, 8, 0.02F, Optional.empty(), List.of()
 				)
 		);
 
 		VillagerTrades.register(context, FARMER_3_BRAVA_POTATOES_RED_PEPPER,
 				new VillagerTrade(
-						new TradeCost(ModItems.BRAVA_POTATOES, 1),
-						new ItemStackTemplate(ModItems.RED_PEPPER, 20),
+						new TradeCost(SDItems.BRAVA_POTATOES, 1),
+						new ItemStackTemplate(SDItems.RED_PEPPER, 20),
 						10, 8, 0.02F, Optional.empty(), List.of()
 				)
 		);
 
 		VillagerTrades.register(context, FARMER_3_PIL_PIL_COD_RED_PEPPER,
 				new VillagerTrade(
-						new TradeCost(ModItems.PIL_PIL_COD, 1),
-						new ItemStackTemplate(ModItems.RED_PEPPER, 20),
+						new TradeCost(SDItems.PIL_PIL_COD, 1),
+						new ItemStackTemplate(SDItems.RED_PEPPER, 20),
 						10, 8, 0.02F, Optional.empty(), List.of()
 				)
 		);
@@ -126,7 +125,7 @@ public class ModVillagerTrades {
 		VillagerTrades.register(context, FARMER_4_EMERALD_GARLIC,
 				new VillagerTrade(
 						new TradeCost(Items.EMERALD, 1),
-						new ItemStackTemplate(ModItems.GARLIC, 34),
+						new ItemStackTemplate(SDItems.GARLIC, 34),
 						6, 10, 0.15F, Optional.empty(), List.of()
 				)
 		);
@@ -134,7 +133,7 @@ public class ModVillagerTrades {
 		VillagerTrades.register(context, FARMER_4_EMERALD_RED_PEPPER,
 				new VillagerTrade(
 						new TradeCost(Items.EMERALD, 1),
-						new ItemStackTemplate(ModItems.RED_PEPPER, 34),
+						new ItemStackTemplate(SDItems.RED_PEPPER, 34),
 						6, 10, 0.15F, Optional.empty(), List.of()
 				)
 		);
@@ -142,7 +141,7 @@ public class ModVillagerTrades {
 		VillagerTrades.register(context, FARMER_4_EMERALD_GREEN_PEPPER,
 				new VillagerTrade(
 						new TradeCost(Items.EMERALD, 1),
-						new ItemStackTemplate(ModItems.GREEN_PEPPER, 34),
+						new ItemStackTemplate(SDItems.GREEN_PEPPER, 34),
 						6, 10, 0.15F, Optional.empty(), List.of()
 				)
 		);
@@ -151,7 +150,7 @@ public class ModVillagerTrades {
 		VillagerTrades.register(context, FARMER_5_EMERALD_GARLIC,
 				new VillagerTrade(
 						new TradeCost(Items.EMERALD, 6),
-						new ItemStackTemplate(ModItems.GARLIC, 64),
+						new ItemStackTemplate(SDItems.GARLIC, 64),
 						1, 15, 0.02F, Optional.empty(), List.of()
 				)
 		);
@@ -159,7 +158,7 @@ public class ModVillagerTrades {
 		VillagerTrades.register(context, FARMER_5_EMERALD_RED_PEPPER,
 				new VillagerTrade(
 						new TradeCost(Items.EMERALD, 6),
-						new ItemStackTemplate(ModItems.RED_PEPPER, 64),
+						new ItemStackTemplate(SDItems.RED_PEPPER, 64),
 						1, 15, 0.02F, Optional.empty(), List.of()
 				)
 		);
@@ -167,7 +166,7 @@ public class ModVillagerTrades {
 		VillagerTrades.register(context, FARMER_5_EMERALD_GREEN_PEPPER,
 				new VillagerTrade(
 						new TradeCost(Items.EMERALD, 6),
-						new ItemStackTemplate(ModItems.GREEN_PEPPER, 64),
+						new ItemStackTemplate(SDItems.GREEN_PEPPER, 64),
 						1, 15, 0.02F, Optional.empty(), List.of()
 				)
 		);
@@ -175,7 +174,7 @@ public class ModVillagerTrades {
 		// WANDERING TRADER
 		VillagerTrades.register(context, WANDERING_GARLIC_DIAMOND_KNIFE,
 				new VillagerTrade(
-						new TradeCost(ModItems.GARLIC, 64),
+						new TradeCost(SDItems.GARLIC, 64),
 						new ItemStackTemplate(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get(), 1),
 						1, 12, 0.15F, Optional.empty(), List.of()
 				)
@@ -183,7 +182,7 @@ public class ModVillagerTrades {
 
 		VillagerTrades.register(context, WANDERING_RED_PEPPER_DIAMOND_KNIFE,
 				new VillagerTrade(
-						new TradeCost(ModItems.RED_PEPPER, 64),
+						new TradeCost(SDItems.RED_PEPPER, 64),
 						new ItemStackTemplate(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get(), 1),
 						1, 12, 0.15F, Optional.empty(), List.of()
 				)
@@ -191,7 +190,7 @@ public class ModVillagerTrades {
 
 		VillagerTrades.register(context, WANDERING_GREEN_PEPPER_DIAMOND_KNIFE,
 				new VillagerTrade(
-						new TradeCost(ModItems.GREEN_PEPPER, 64),
+						new TradeCost(SDItems.GREEN_PEPPER, 64),
 						new ItemStackTemplate(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get(), 1),
 						1, 12, 0.15F, Optional.empty(), List.of()
 				)

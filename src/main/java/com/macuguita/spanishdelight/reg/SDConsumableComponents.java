@@ -20,7 +20,7 @@
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.macuguita.spanishdelight.item;
+package com.macuguita.spanishdelight.reg;
 
 import vectorwing.farmersdelight.common.FoodValues;
 
@@ -28,7 +28,7 @@ import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
-public class ModConsumableComponents {
+public final class SDConsumableComponents {
 
 	private static final int BRIEF_DURATION = 600;    // 30 seconds
 	private static final int SHORT_DURATION = 1200;    // 1 minute
@@ -62,4 +62,6 @@ public class ModConsumableComponents {
 	public static final Consumable PIL_PIL_COD = Consumables.defaultFood()
 			.onConsume(new ApplyStatusEffectsConsumeEffect(FoodValues.nourishment(LONG_DURATION)))
 			.build();
+
+	private SDConsumableComponents() {}
 }

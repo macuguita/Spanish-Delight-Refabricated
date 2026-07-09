@@ -1,9 +1,9 @@
 object BuildConfig {
-    val minecraftVersion: String = "26.1.2"
-    val minecraftVersionRange: String = ">=26.1-"
-    val supportedVersions: Array<String> = arrayOf("26.1", "26.1.1", "26.1.2")
+    val minecraftVersion: String = "26.2"
+    val minecraftVersionRange: String = ">=26.2-"
+    val supportedVersions: Array<String> = arrayOf("26.2")
     val parchmentMappings: String? = null
-    val loaderVersion: String = "0.19.2"
+    val loaderVersion: String = "0.19.3"
 
     val modVersion: String = minecraftVersion + "-1.0.10"
     val mavenGroup: String = "com.macuguita"
@@ -12,7 +12,7 @@ object BuildConfig {
     val description: String = "An addon for Farmer's Delight Refabricated that adds regional plates from Spain!"
     val license: String = "MIT"
 
-    val fabricVersion: String = "0.145.4+" + minecraftVersion
+    val fabricVersion: String = "0.154.2+" + minecraftVersion
 //    val modMenuVersion: String = "16.0.0-rc.1"
-    val fdrfVersion: String = "26.1-3.6.4+refabricated"
+    val fdrfVersion: String = "26.2-3.6.7+refabricated"
 }

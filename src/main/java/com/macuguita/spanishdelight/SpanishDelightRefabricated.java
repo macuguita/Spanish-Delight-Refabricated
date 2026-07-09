@@ -22,18 +22,21 @@
 
 package com.macuguita.spanishdelight;
 
-import com.macuguita.spanishdelight.block.ModBlocks;
-import com.macuguita.spanishdelight.item.ModItemGroups;
-import com.macuguita.spanishdelight.item.ModItems;
-import com.macuguita.spanishdelight.worldgen.ModWorldgen;
+import com.macuguita.spanishdelight.reg.SDBlocks;
+import com.macuguita.spanishdelight.reg.SDItemGroups;
+import com.macuguita.spanishdelight.reg.SDItems;
+import com.macuguita.spanishdelight.worldgen.SDWorldgen;
+
+import net.minecraft.advancements.predicates.ItemPredicate;
+import net.minecraft.advancements.predicates.entity.EntityEquipmentPredicate;
+
+import net.minecraft.advancements.predicates.entity.EntityFlagsPredicate;
+import net.minecraft.advancements.predicates.entity.EntityPredicate;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 
-import net.minecraft.advancements.criterion.EntityEquipmentPredicate;
-import net.minecraft.advancements.criterion.EntityFlagsPredicate;
-import net.minecraft.advancements.criterion.EntityPredicate;
-import net.minecraft.advancements.criterion.ItemPredicate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
@@ -66,20 +69,20 @@ public class SpanishDelightRefabricated implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModBlocks.registerModBlocks();
-		ModItems.registerModItems();
-		ModItemGroups.registerItemGroups();
-		ModWorldgen.init();
+		SDBlocks.registerModBlocks();
+		SDItems.registerModItems();
+		SDItemGroups.registerItemGroups();
+		SDWorldgen.init();
 
 		LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
 			if (source.isBuiltin()) {
 				if (SQUID_LOOT_TABLE_ID == key || GLOW_SQUID_LOOT_TABLE_ID == key) {
-					tableBuilder.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.SQUID_RING)
+					tableBuilder.withPool(LootPool.lootPool().add(LootItem.lootTableItem(SDItems.SQUID_RING)
 									.when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.entity().equipment(
 													EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM), CommonTags.Items.TOOLS_KNIFE))
 											)).and(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(false))))
 											.and(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(registries, 0.5F, 0.1F)))))
-							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(ModItems.FRIED_SQUID_RING)
+							.withPool(LootPool.lootPool().add(LootItem.lootTableItem(SDItems.FRIED_SQUID_RING)
 									.when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.ATTACKER, EntityPredicate.Builder.entity().equipment(
 											EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM), CommonTags.Items.TOOLS_KNIFE))
 									)).and(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true)))
